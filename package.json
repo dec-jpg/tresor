@@ -1,0 +1,10 @@
+{
+  "name": "tresor",
+  "version": "1.0.0",
+  "description": "Tresor: Safety Simplified's view across every client portal",
+  "main": "server.js",
+  "private": true,
+  "engines": { "node": ">=20" },
+  "scripts": { "start": "node server.js" },
+  "dependencies": { "express": "^5.2.1" }
+}

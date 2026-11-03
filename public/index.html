@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tresor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root { --ink: #18201b; --ink-2: #4b5550; --faint: #8a938e; --paper: #f4f1ea; --line: #e2ddd2; --card: #fff; --accent: #1f3a5f; --accent-2: #2c5280;
+  --ok: #1e7a4a; --ok-bg: #e6f3ec; --warn: #b26a00; --warn-bg: #fdf1dc; --bad: #b3261e; --bad-bg: #fbe7e5; --radius: 14px; --shadow: 0 1px 2px rgba(0,0,0,.04), 0 6px 20px rgba(24,32,27,.05);
+  --mono: "JetBrains Mono", ui-monospace, monospace; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Inter, system-ui, sans-serif; color: var(--ink); background: var(--paper); font-size: 15px; line-height: 1.5; }
+a { color: var(--accent); }
+h1, h2, h3 { margin: 0; letter-spacing: -.02em; }
+.muted { color: var(--ink-2); }
+.small { font-size: .85rem; }
+.mono { font-family: var(--mono); font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.btn { font: inherit; font-weight: 700; font-size: .88rem; border: 1px solid var(--accent); background: var(--accent); color: #fff; border-radius: 9px; padding: .55rem 1rem; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: .4rem; }
+.btn:hover { background: var(--accent-2); }
+.btn.ghost { background: #fff; color: var(--ink); border-color: var(--line); }
+.btn.ghost:hover { border-color: var(--accent); color: var(--accent); background: #fff; }
+input { font: inherit; width: 100%; padding: .6rem .75rem; border: 1px solid var(--line); border-radius: 9px; background: #fff; }
+input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px #e8eef5; }
+label { display: block; font-size: .85rem; font-weight: 600; margin: .9rem 0 .3rem; }
+.note { padding: .7rem .9rem; border-radius: 10px; font-size: .9rem; }
+.note.err { background: var(--bad-bg); color: var(--bad); }
+
+/* login */
+.login-wrap { min-height: 100vh; display: grid; place-items: center; padding: 1.5rem; }
+.login-card { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 2rem; width: min(400px, 100%); box-shadow: var(--shadow); }
+.wordmark { font-weight: 800; font-size: 1.6rem; letter-spacing: -.03em; }
+.wordmark span { color: var(--accent); }
+
+/* shell */
+.top { background: #0f1a2b; color: #fff; padding: 0 1.5rem; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+.top .wordmark { font-size: 1.25rem; color: #fff; } .top .wordmark span { color: #8fb3e3; }
+.top .who { font-size: .85rem; color: #b8c4d6; display: flex; gap: 1rem; align-items: center; }
+.top .who button { background: none; border: 0; color: #fff; font: inherit; font-weight: 700; cursor: pointer; font-size: .85rem; }
+.wrap { max-width: 1240px; margin: 0 auto; padding: 1.6rem 1.5rem 4rem; }
+.bar { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: 1.2rem; flex-wrap: wrap; }
+.bar h1 { font-size: 1.5rem; }
+.totals { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: .8rem; margin-bottom: 1.6rem; }
+.stat { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: .9rem 1.1rem; box-shadow: var(--shadow); }
+.stat .k { font-family: var(--mono); font-size: 10.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-2); }
+.stat .n { font-size: 1.7rem; font-weight: 800; line-height: 1.2; margin-top: .15rem; }
+.stat.bad .n { color: var(--bad); } .stat.warn .n { color: var(--warn); }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+.client { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; display: flex; flex-direction: column; }
+.client .head { padding: .9rem 1.1rem; border-top: 5px solid var(--c, var(--accent)); display: flex; justify-content: space-between; align-items: flex-start; gap: .6rem; }
+.client .head h2 { font-size: 1.05rem; }
+.client .head .portal { font-size: .78rem; color: var(--faint); margin-top: .1rem; }
+.pill { font-size: .72rem; font-weight: 700; padding: .15rem .5rem; border-radius: 999px; white-space: nowrap; }
+.pill.ok { background: var(--ok-bg); color: var(--ok); } .pill.bad { background: var(--bad-bg); color: var(--bad); } .pill.warn { background: var(--warn-bg); color: var(--warn); } .pill.off { background: #eee; color: var(--ink-2); }
+.client .nums { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.client .nums div { padding: .6rem .5rem; text-align: center; border-right: 1px solid var(--line); }
+.client .nums div:last-child { border-right: 0; }
+.client .nums b { display: block; font-size: 1.3rem; font-weight: 800; }
+.client .nums b.bad { color: var(--bad); } .client .nums b.warn { color: var(--warn); } .client .nums b.ok { color: var(--ok); }
+.client .nums span { font-size: .72rem; color: var(--ink-2); }
+.client .body { padding: .8rem 1.1rem; font-size: .88rem; flex: 1; }
+.client .body p { margin: .25rem 0; }
+.client .talk { display: flex; justify-content: space-between; gap: .6rem; padding: .35rem 0; border-bottom: 1px dashed var(--line); }
+.client .talk:last-child { border-bottom: 0; }
+.client .talk .t { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.client .talk .s { font-family: var(--mono); font-size: 11px; font-weight: 700; white-space: nowrap; color: var(--ink-2); }
+.client .foot { padding: .7rem 1.1rem; border-top: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; font-size: .8rem; color: var(--faint); }
+.client.down .body { color: var(--bad); }
+
+.section { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); margin-bottom: 1.2rem; }
+.section h2 { font-size: 1rem; padding: .85rem 1.1rem; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; }
+.section table { width: 100%; border-collapse: collapse; font-size: .88rem; }
+.section th { text-align: left; font-family: var(--mono); font-size: 10.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-2); padding: .6rem 1.1rem; border-bottom: 1px solid var(--line); font-weight: 700; }
+.section td { padding: .55rem 1.1rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+.section tr:last-child td { border-bottom: 0; }
+.section .empty { padding: 1rem 1.1rem; color: var(--faint); font-size: .9rem; }
+.tag { display: inline-block; font-size: .72rem; font-weight: 700; padding: .1rem .45rem; border-radius: 6px; background: #eef1f6; color: var(--accent); }
+@media (max-width: 640px) { .top { padding: 0 1rem; } .wrap { padding: 1rem 1rem 3rem; } }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const api = (p, body) => fetch(p, body ? { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) } : {}).then(async r => { const j = await r.json().catch(() => ({})); if (!r.ok) throw new Error(j.error || 'Something went wrong.'); return j; });
+const fmtDate = s => s ? new Date(s).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }) : '';
+const ago = s => { if (!s) return 'never'; const d = (Date.now() - new Date(s)) / 36e5; if (d < 1) return 'in the last hour'; if (d < 24) return `${Math.round(d)}h ago`; const days = Math.round(d / 24); return days === 1 ? 'yesterday' : `${days} days ago`; };
+const wordmark = '<div class="wordmark">Tre<span>sor</span></div>';
+let me = null;
+
+function login(msg) {
+  $('#root').innerHTML = `<div class="login-wrap"><div class="login-card">${wordmark}<p class="muted small" style="margin:.2rem 0 1rem">Safety Simplified · every client portal in one place</p>
+    ${msg ? `<div class="note err">${esc(msg)}</div>` : ''}
+    <label for="e">Email</label><input id="e" type="email" autocomplete="email">
+    <label for="p">Password</label><input id="p" type="password" autocomplete="current-password">
+    <p style="margin-top:1.2rem"><button class="btn" id="go" style="width:100%;justify-content:center">Log in</button></p></div></div>`;
+  const go = async () => { try { me = (await api('/api/login', { email: $('#e').value, password: $('#p').value })).user; shell(); } catch (e) { login(e.message); } };
+  $('#go').onclick = go; $('#p').addEventListener('keydown', e => { if (e.key === 'Enter') go(); });
+}
+
+async function shell(fresh) {
+  $('#root').innerHTML = `<header class="top">${wordmark}<div class="who"><span>${esc(me.name)}</span><button id="lo">Sign out</button></div></header>
+    <main class="wrap"><div class="bar"><div><h1>All clients</h1><p class="muted small" id="asof">Loading…</p></div><button class="btn ghost" id="refresh">Refresh</button></div><div id="content"></div></main>`;
+  $('#lo').onclick = async () => { await api('/api/logout', {}); me = null; login(); };
+  $('#refresh').onclick = () => shell(true);
+  let d; try { d = await api('/api/overview' + (fresh ? '?fresh=1' : '')); } catch (e) { $('#content').innerHTML = `<div class="note err">${esc(e.message)}</div>`; return; }
+  $('#asof').textContent = `As of ${new Date(d.at).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })} today`;
+  const up = d.clients.filter(c => c.ok);
+  const sum = k => up.reduce((a, c) => a + (c.counts[k] || 0), 0);
+  const totals = `<div class="totals">
+    <div class="stat"><div class="k">Clients</div><div class="n">${d.clients.length}</div></div>
+    <div class="stat"><div class="k">Operatives</div><div class="n">${sum('operatives')}</div></div>
+    <div class="stat ${sum('expired') + sum('missing') ? 'bad' : ''}"><div class="k">Expired or missing</div><div class="n">${sum('expired') + sum('missing')}</div></div>
+    <div class="stat ${sum('expiring') ? 'warn' : ''}"><div class="k">Expiring in 30 days</div><div class="n">${sum('expiring')}</div></div>
+    <div class="stat"><div class="k">Talks open</div><div class="n">${sum('open_talks')}</div></div>
+    <div class="stat"><div class="k">Sign-offs, 30 days</div><div class="n">${sum('signoffs_30d')}</div></div></div>`;
+  const cards = d.clients.map(c => {
+    if (!c.ok) return `<div class="client down"><div class="head"><div><h2>${esc(c.name)}</h2><div class="portal">${esc(c.url.replace('https://', ''))}</div></div><span class="pill bad">Not reachable</span></div>
+      <div class="body"><p>${esc(c.error)}</p></div><div class="foot"><span></span><a class="btn ghost" href="${esc(c.url)}/admin" target="_blank" rel="noopener">Open portal</a></div></div>`;
+    const n = c.counts, gaps = n.expired + n.missing;
+    const status = gaps ? `<span class="pill bad">${gaps} to sort</span>` : n.expiring ? `<span class="pill warn">${n.expiring} expiring</span>` : '<span class="pill ok">All in date</span>';
+    const talks = c.talks.length ? c.talks.slice(0, 4).map(t => `<div class="talk"><span class="t">${esc(t.title)}</span><span class="s">${t.signed}/${t.expected}</span></div>`).join('') : '<p class="muted">No talks open for signing.</p>';
+    return `<div class="client" style="--c:${esc(c.colour || '#1f3a5f')}"><div class="head"><div><h2>${esc(c.company || c.name)}</h2><div class="portal">${esc(c.portal || '')}</div></div>${status}</div>
+      <div class="nums"><div><b>${n.operatives}</b><span>operatives</span></div><div><b class="${gaps ? 'bad' : 'ok'}">${gaps}</b><span>expired / missing</span></div><div><b class="${n.expiring ? 'warn' : ''}">${n.expiring}</b><span>expiring</span></div></div>
+      <div class="body"><p class="mono" style="color:var(--ink-2);margin-bottom:.3rem">Talks open · ${c.talks.length}</p>${talks}
+        ${n.unmatched ? `<p class="small" style="margin-top:.6rem;color:var(--warn)">${n.unmatched} signature${n.unmatched === 1 ? '' : 's'} to match</p>` : ''}</div>
+      <div class="foot"><span>Last sign-off ${ago(n.last_signoff)}</span><a class="btn ghost" href="${esc(c.url)}/admin" target="_blank" rel="noopener">Open portal</a></div></div>`;
+  }).join('');
+  const tickets = up.flatMap(c => c.tickets.map(t => ({ ...t, client: c.short || c.company }))).sort((a, b) => a.expires_on.localeCompare(b.expires_on));
+  const today = new Date().toISOString().slice(0, 10);
+  const attention = `<div class="section"><h2>Needs attention <span class="muted small" style="font-weight:500">Cards expired or expiring within 30 days, across all clients</span></h2>
+    ${tickets.length ? `<table><thead><tr><th>Client</th><th>Name</th><th>Card</th><th>Expires</th></tr></thead><tbody>${tickets.map(t => `<tr><td><span class="tag">${esc(t.client)}</span></td><td>${esc(t.full_name)}</td><td>${esc(t.type_name)}</td><td style="color:${t.expires_on < today ? 'var(--bad)' : 'var(--warn)'};font-weight:600">${fmtDate(t.expires_on)}${t.expires_on < today ? ' · expired' : ''}</td></tr>`).join('')}</tbody></table>` : '<div class="empty">Nothing expiring. Everything in date across all clients.</div>'}</div>`;
+  const recent = up.flatMap(c => c.recent.map(r => ({ ...r, client: c.short || c.company }))).sort((a, b) => b.signed_at.localeCompare(a.signed_at)).slice(0, 15);
+  const activity = `<div class="section"><h2>Recent sign-offs</h2>
+    ${recent.length ? `<table><thead><tr><th>When</th><th>Client</th><th>Name</th><th>Signed</th></tr></thead><tbody>${recent.map(r => `<tr><td class="muted">${esc(fmtDate(r.signed_at))}</td><td><span class="tag">${esc(r.client)}</span></td><td>${esc(r.name)}</td><td>${esc(r.talk || r.doc || '')}</td></tr>`).join('')}</tbody></table>` : '<div class="empty">No sign-offs yet.</div>'}</div>`;
+  $('#content').innerHTML = totals + `<div class="grid">${cards}</div>` + attention + activity;
+}
+
+api('/api/me').then(d => { me = d.user; me ? shell() : login(); }).catch(() => login());
+</script>
+</body>
+</html>
