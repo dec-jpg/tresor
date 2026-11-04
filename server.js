@@ -5,6 +5,7 @@ const express = require('express');
 const crypto = require('crypto');
 const path = require('path');
 const fs = require('fs');
+const db = require('./lib/db');
 
 const clients = JSON.parse(fs.readFileSync(process.env.CLIENTS_FILE || path.join(__dirname, 'clients.json'), 'utf8'));
 const KEY = process.env.TRESOR_KEY || '';
@@ -51,6 +52,40 @@ app.get('/api/overview', async (req, res) => {
   res.json({ clients: cache.data, at: new Date(cache.at).toISOString() });
 });
 
+// ---- libraries: what Safety Simplified keeps once for every client ----
+const needUser = (req, res, next) => (user(req) ? next() : res.status(401).json({ error: 'Log in first.' }));
+const needKey = (req, res, next) => { const g = req.get('x-tresor-key') || ''; if (!KEY || g.length !== KEY.length || !safeEq(g, KEY)) return res.status(401).json({ error: 'Not authorised.' }); next(); };
+const wrap = fn => (req, res) => fn(req, res).catch(e => res.status(e.status || 500).json({ error: e.message }));
+
+// Portals pull the current published version with this (keyed, no login).
+app.get('/api/library/:name', needKey, wrap(async (req, res) => {
+  const v = (await db.q('SELECT version, body, note, resign, published_at FROM library_versions WHERE name = $1 ORDER BY version DESC LIMIT 1', [req.params.name])).rows[0];
+  if (!v) return res.status(404).json({ error: 'No published version.' });
+  res.json(v);
+}));
+// The editor works on the draft; publishing snapshots it as the next version.
+app.get('/api/libraries/:name', needUser, wrap(async (req, res) => {
+  const draft = (await db.q('SELECT body, updated_by, updated_at FROM library_drafts WHERE name = $1', [req.params.name])).rows[0] || null;
+  const versions = (await db.q('SELECT version, note, resign, published_by, published_at FROM library_versions WHERE name = $1 ORDER BY version DESC', [req.params.name])).rows;
+  res.json({ draft, versions, enabled: db.enabled });
+}));
+app.put('/api/libraries/:name', needUser, wrap(async (req, res) => {
+  const body = (req.body || {}).body;
+  if (!body || typeof body !== 'object') return res.status(400).json({ error: 'Nothing to save.' });
+  await db.q('INSERT INTO library_drafts (name, body, updated_by, updated_at) VALUES ($1,$2,$3,NOW()) ON CONFLICT (name) DO UPDATE SET body = EXCLUDED.body, updated_by = EXCLUDED.updated_by, updated_at = NOW()', [req.params.name, JSON.stringify(body), user(req).name]);
+  res.json({ ok: true });
+}));
+app.post('/api/libraries/:name/publish', needUser, wrap(async (req, res) => {
+  const draft = (await db.q('SELECT body FROM library_drafts WHERE name = $1', [req.params.name])).rows[0];
+  if (!draft) return res.status(400).json({ error: 'Save a draft first.' });
+  const prev = (await db.q('SELECT version FROM library_versions WHERE name = $1 ORDER BY version DESC LIMIT 1', [req.params.name])).rows[0];
+  const version = prev ? prev.version + 1 : 1;
+  const b = req.body || {};
+  await db.q('INSERT INTO library_versions (name, version, body, note, resign, published_by) VALUES ($1,$2,$3,$4,$5,$6)', [req.params.name, version, JSON.stringify(draft.body), String(b.note || '').slice(0, 300), b.resign !== false, user(req).name]);
+  cache = { at: 0, data: null };
+  res.json({ version });
+}));
+
 app.use(express.static(path.join(__dirname, 'public'), { index: 'index.html', maxAge: 0 }));
 app.get('/healthz', (req, res) => res.json({ ok: true }));
-app.listen(process.env.PORT || 3000, () => console.log('Tresor listening on', process.env.PORT || 3000));
+db.migrate().then(() => app.listen(process.env.PORT || 3000, () => console.log('Tresor listening on', process.env.PORT || 3000))).catch(e => { console.error('Startup failed:', e); process.exit(1); });

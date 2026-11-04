@@ -21,6 +21,7 @@ h1, h2, h3 { margin: 0; letter-spacing: -.02em; }
 .btn:hover { background: var(--accent-2); }
 .btn.ghost { background: #fff; color: var(--ink); border-color: var(--line); }
 .btn.ghost:hover { border-color: var(--accent); color: var(--accent); background: #fff; }
+textarea { font: inherit; width: 100%; padding: .6rem .75rem; border: 1px solid var(--line); border-radius: 9px; background: #fff; resize: vertical; }
 input { font: inherit; width: 100%; padding: .6rem .75rem; border: 1px solid var(--line); border-radius: 9px; background: #fff; }
 input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px #e8eef5; }
 label { display: block; font-size: .85rem; font-weight: 600; margin: .9rem 0 .3rem; }
@@ -36,6 +37,7 @@ label { display: block; font-size: .85rem; font-weight: 600; margin: .9rem 0 .3r
 /* shell */
 .top { background: #0f1a2b; color: #fff; padding: 0 1.5rem; height: 60px; display: flex; align-items: center; justify-content: space-between; }
 .top .wordmark { font-size: 1.25rem; color: #fff; } .top .wordmark span { color: #8fb3e3; }
+.topnav { display: flex; gap: 1.2rem; margin-left: 2rem; flex: 1; } .topnav a { color: #b8c4d6; text-decoration: none; font-weight: 600; font-size: .9rem; padding: .3rem 0; border-bottom: 2px solid transparent; } .topnav a.on { color: #fff; border-bottom-color: #8fb3e3; }
 .top .who { font-size: .85rem; color: #b8c4d6; display: flex; gap: 1rem; align-items: center; }
 .top .who button { background: none; border: 0; color: #fff; font: inherit; font-weight: 700; cursor: pointer; font-size: .85rem; }
 .wrap { max-width: 1240px; margin: 0 auto; padding: 1.6rem 1.5rem 4rem; }
@@ -97,14 +99,21 @@ function login(msg) {
     <label for="e">Email</label><input id="e" type="email" autocomplete="email">
     <label for="p">Password</label><input id="p" type="password" autocomplete="current-password">
     <p style="margin-top:1.2rem"><button class="btn" id="go" style="width:100%;justify-content:center">Log in</button></p></div></div>`;
-  const go = async () => { try { me = (await api('/api/login', { email: $('#e').value, password: $('#p').value })).user; shell(); } catch (e) { login(e.message); } };
+  const go = async () => { try { me = (await api('/api/login', { email: $('#e').value, password: $('#p').value })).user; route(); } catch (e) { login(e.message); } };
   $('#go').onclick = go; $('#p').addEventListener('keydown', e => { if (e.key === 'Enter') go(); });
 }
 
-async function shell(fresh) {
-  $('#root').innerHTML = `<header class="top">${wordmark}<div class="who"><span>${esc(me.name)}</span><button id="lo">Sign out</button></div></header>
-    <main class="wrap"><div class="bar"><div><h1>All clients</h1><p class="muted small" id="asof">Loading…</p></div><button class="btn ghost" id="refresh">Refresh</button></div><div id="content"></div></main>`;
+function frame(title, sub, extra) {
+  const view = location.hash.replace(/^#\/?/, '') || '';
+  $('#root').innerHTML = `<header class="top">${wordmark}<nav class="topnav"><a href="#/" class="${view === '' ? 'on' : ''}">Clients</a><a href="#/policies" class="${view === 'policies' ? 'on' : ''}">Policies</a></nav><div class="who"><span>${esc(me.name)}</span><button id="lo">Sign out</button></div></header>
+    <main class="wrap"><div class="bar"><div><h1>${esc(title)}</h1><p class="muted small" id="asof">${sub || ''}</p></div><div id="bar-extra">${extra || ''}</div></div><div id="content"></div></main>`;
   $('#lo').onclick = async () => { await api('/api/logout', {}); me = null; login(); };
+}
+function route() { if (!me) return login(); const view = location.hash.replace(/^#\/?/, ''); if (view === 'policies') return policies(); return shell(); }
+window.addEventListener('hashchange', () => { if (me) route(); });
+
+async function shell(fresh) {
+  frame('All clients', 'Loading…', '<button class="btn ghost" id="refresh">Refresh</button>');
   $('#refresh').onclick = () => shell(true);
   let d; try { d = await api('/api/overview' + (fresh ? '?fresh=1' : '')); } catch (e) { $('#content').innerHTML = `<div class="note err">${esc(e.message)}</div>`; return; }
   $('#asof').textContent = `As of ${new Date(d.at).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })} today`;
@@ -129,7 +138,8 @@ async function shell(fresh) {
         <p><b>${n.on_site_now}</b> on site now · <b>${n.signins_today}</b> sign-ins today${n.open_findings ? ` · <span style="color:var(--warn)">${n.open_findings} open finding${n.open_findings === 1 ? '' : 's'}</span>` : ''}${n.refusals_7d ? ` · ${n.refusals_7d} refused sign-ins this week` : ''}</p>
         ${(c.sites || []).filter(s => s.on_site).slice(0, 5).map(s => `<div class="talk"><span class="t">${esc(s.name)}</span><span class="s">${s.on_site} on site</span></div>`).join('')}
         <p class="mono" style="color:var(--ink-2);margin:.6rem 0 .3rem">Talks open · ${c.talks.length}</p>` : `<p class="mono" style="color:var(--ink-2);margin-bottom:.3rem">Talks open · ${c.talks.length}</p>`}${talks}
-        ${n.unmatched ? `<p class="small" style="margin-top:.6rem;color:var(--warn)">${n.unmatched} signature${n.unmatched === 1 ? '' : 's'} to match</p>` : ''}</div>
+        ${n.unmatched ? `<p class="small" style="margin-top:.6rem;color:var(--warn)">${n.unmatched} signature${n.unmatched === 1 ? '' : 's'} to match</p>` : ''}
+        ${c.policies ? `<p class="small" style="margin-top:.6rem;color:${c.policies.needs_signature ? 'var(--warn)' : 'var(--ok)'}">Policies v${c.policies.version}: ${c.policies.needs_signature ? (c.policies.signed_version ? `v${c.policies.signed_version} signed, v${c.policies.version} needs the director` : 'not yet signed') : `signed by ${esc(c.policies.signed_by)}`}</p>` : ''}</div>
       <div class="foot"><span>Last sign-off ${ago(n.last_signoff)}</span><a class="btn ghost" href="${esc(c.url)}/admin" target="_blank" rel="noopener">Open portal</a></div></div>`;
   }).join('');
   const tickets = up.flatMap(c => c.tickets.map(t => ({ ...t, client: c.short || c.company }))).sort((a, b) => a.expires_on.localeCompare(b.expires_on));
@@ -142,7 +152,42 @@ async function shell(fresh) {
   $('#content').innerHTML = totals + `<div class="grid">${cards}</div>` + attention + activity;
 }
 
-api('/api/me').then(d => { me = d.user; me ? shell() : login(); }).catch(() => login());
+// ---- policy library editor ----
+const blocksToText = blocks => (blocks || []).map(b => (b.t === 'h' ? `## ${b.text}` : b.t === 'ul' ? b.items.map(i => `- ${i}`).join('\n') : b.text)).join('\n\n');
+const textToBlocks = text => { const out = []; for (const raw of String(text || '').split(/\n/)) { const l = raw.trim(); if (!l) continue;
+  if (/^##\s*/.test(l)) out.push({ t: 'h', text: l.replace(/^##\s*/, '') });
+  else if (/^[-•*]\s*/.test(l)) { const last = out[out.length - 1]; const item = l.replace(/^[-•*]\s*/, ''); if (last && last.t === 'ul') last.items.push(item); else out.push({ t: 'ul', items: [item] }); }
+  else out.push({ t: 'p', text: l }); } return out; };
+const slug = t => t.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+async function policies() {
+  frame('Policy library', 'One master for every client. {{company}} and {{about}} are filled in by each portal.', '<button class="btn ghost" id="save">Save draft</button> <button class="btn" id="pub">Publish</button>');
+  let d; try { d = await api('/api/libraries/policies'); } catch (e) { $('#content').innerHTML = `<div class="note err">${esc(e.message)}</div>`; return; }
+  const list = (d.draft && d.draft.body.policies) || [];
+  const latest = d.versions[0];
+  $('#asof').textContent = `${latest ? `Published version ${latest.version} on ${fmtDate(latest.published_at)} by ${latest.published_by}.` : 'Nothing published yet.'} ${d.draft ? `Draft last saved ${fmtDate(d.draft.updated_at)} by ${d.draft.updated_by}.` : ''}`;
+  const card = (p, i) => `<div class="section pol" data-i="${i}"><h2><span><input class="pol-title" value="${esc(p.title)}" style="font-weight:700;font-size:1rem;width:min(520px,70vw);border:0;padding:.2rem 0;background:transparent"></span>
+      <span style="display:flex;gap:.3rem"><button class="btn ghost" data-up title="Move up">↑</button><button class="btn ghost" data-down title="Move down">↓</button><button class="btn ghost" data-del>Remove</button></span></h2>
+    <div style="padding:.8rem 1.1rem"><textarea rows="${Math.min(28, Math.max(6, blocksToText(p.blocks).split('\n').length + 1))}" style="font-family:var(--mono);font-size:12.5px;line-height:1.5">${esc(blocksToText(p.blocks))}</textarea></div></div>`;
+  $('#content').innerHTML = `<p class="muted small">Each policy is one box. Lines starting with <code>- </code> are bullet points, lines starting with <code>## </code> are sub-headings, blank lines separate paragraphs. Use <code>{{company}}</code> for the client's name and <code>{{about}}</code> for their trade line ("a groundworks contractor working on…").</p>
+    <div id="pols">${list.map(card).join('')}</div><p><button class="btn ghost" id="add">Add a policy</button></p>
+    ${d.versions.length ? `<div class="section"><h2>Versions</h2><table><thead><tr><th>Version</th><th>Published</th><th>By</th><th>Note</th><th>Re-sign</th></tr></thead><tbody>${d.versions.map(v => `<tr><td>${v.version}</td><td>${fmtDate(v.published_at)}</td><td>${esc(v.published_by)}</td><td>${esc(v.note || '')}</td><td>${v.resign ? 'Yes' : 'No'}</td></tr>`).join('')}</tbody></table></div>` : ''}`;
+  const wire = () => $('#pols').querySelectorAll('.pol').forEach(el => {
+    el.querySelector('[data-del]').onclick = () => { if (confirm('Remove this policy from the library?')) el.remove(); };
+    el.querySelector('[data-up]').onclick = () => el.previousElementSibling && el.parentNode.insertBefore(el, el.previousElementSibling);
+    el.querySelector('[data-down]').onclick = () => el.nextElementSibling && el.parentNode.insertBefore(el.nextElementSibling, el);
+  });
+  wire();
+  $('#add').onclick = () => { $('#pols').insertAdjacentHTML('beforeend', card({ title: 'New Policy', blocks: [] }, Date.now())); wire(); $('#pols').lastElementChild.scrollIntoView({ behavior: 'smooth' }); };
+  const collect = () => ({ policies: [...$('#pols').querySelectorAll('.pol')].map(el => { const title = el.querySelector('.pol-title').value.trim(); return { key: slug(title), title, blocks: textToBlocks(el.querySelector('textarea').value) }; }).filter(p => p.title) });
+  $('#save').onclick = async () => { try { await api('/api/libraries/policies', { body: collect() }); policies(); } catch (e) { alert(e.message); } };
+  $('#pub').onclick = async () => {
+    const note = prompt('What changed in this version? (shown to you on the versions list)'); if (note === null) return;
+    const resign = confirm('Does this change need every client\'s director to re-sign their policies?\n\nOK = yes, re-sign needed. Cancel = no, just update the wording.');
+    try { await api('/api/libraries/policies', { body: collect() }); const r = await api('/api/libraries/policies/publish', { note, resign }); alert(`Published version ${r.version}.`); policies(); } catch (e) { alert(e.message); }
+  };
+}
+
+api('/api/me').then(d => { me = d.user; me ? route() : login(); }).catch(() => login());
 </script>
 </body>
 </html>

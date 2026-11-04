@@ -1,0 +1,1324 @@
+{
+ "policies": [
+  {
+   "key": "health-safety-statement",
+   "title": "Health and Safety Policy Statement of Intent",
+   "blocks": [
+    {
+     "t": "p",
+     "text": "{{company}} is {{about}}. The health, safety and welfare of our employees, subcontractors and anyone affected by our work is a core part of how we run the business, and the Director takes overall responsibility for it."
+    },
+    {
+     "t": "p",
+     "text": "We will, so far as is reasonably practicable:"
+    },
+    {
+     "t": "ul",
+     "items": [
+      "Comply with the Health and Safety at Work etc. Act 1974, the Management of Health and Safety at Work Regulations 1999, the Construction (Design and Management) Regulations 2015 and all other legislation that applies to our work.",
+      "Provide and maintain safe systems of work, safe plant and equipment and a safe working environment, with the risks of our own trade assessed and controlled before work starts.",
+      "Assess the risks arising from our work and from the substances we use, and put suitable controls in place before work starts.",
+      "Provide the information, instruction, training and supervision our people need to work safely, including site inductions, toolbox talks and the trade qualifications relevant to our work.",
+      "Provide and maintain suitable personal protective equipment at no cost to our people.",
+      "Consult our workforce on matters affecting their health and safety and encourage the reporting of hazards, near misses and ill health without fear of blame.",
+      "Cooperate with principal contractors and clients, work to their site rules, and report anything that presents a risk.",
+      "Investigate accidents and near misses, learn from them and act on the findings."
+     ]
+    },
+    {
+     "t": "p",
+     "text": "Every person working for {{company}} has a duty to take reasonable care of themselves and others, to follow the method they have been briefed on, to use the equipment and PPE provided, and to stop and report any situation they believe to be unsafe."
+    },
+    {
+     "t": "p",
+     "text": "We retain Safety Simplified Ltd as our competent health and safety adviser. This statement is reviewed at least annually, and sooner where the business, the work or the law changes, and is brought to the attention of all employees and subcontractors."
+    }
+   ]
+  },
+  {
+   "key": "environmental",
+   "title": "Environmental Policy",
+   "blocks": [
+    {
+     "t": "p",
+     "text": "{{company}} recognises that its activities as {{about}} have an effect on the environment through the materials we use, the waste we produce and the sites we work on. The Director has overall responsibility for this policy, and its application day to day is the responsibility of management and supervision within the company. It is the policy of the company to:"
+    },
+    {
+     "t": "ul",
+     "items": [
+      "Comply with the Environmental Protection Act 1990 and all other environmental legislation and client requirements that apply to our work.",
+      "Set and maintain high standards of environmental practice on every site.",
+      "Maintain a programme of continual improvement."
+     ]
+    },
+    {
+     "t": "h",
+     "text": "Objectives"
+    },
+    {
+     "t": "ul",
+     "items": [
+      "Identify environmental hazards and assess the risks arising from our work.",
+      "Establish and maintain controls, and minimise the frequency of environmental incidents.",
+      "Reduce waste by ordering accurately, storing materials properly and segregating waste for reuse and recycling, using the principal contractor's waste arrangements where they are provided.",
+      "Prevent pollution: no washing out of tools or plant into drains or watercourses, spill kits available where fuel or oil is stored, and dust suppression where cutting or grinding takes place.",
+      "Control nuisance to neighbours from noise, dust and mud on the road.",
+      "Communicate to all employees and subcontractors their individual environmental obligations through inductions, toolbox talks and briefings.",
+      "Maintain training for management, supervision and the workforce, and provide adequate resources."
+     ]
+    },
+    {
+     "t": "h",
+     "text": "Statement of intent"
+    },
+    {
+     "t": "p",
+     "text": "The company accepts that environmental issues are management responsibilities, but they depend on the cooperation of all employees to make the policy successful. It is the duty of all employees to comply with this policy at all times, to act responsibly and to do everything they can to promote good environmental practice."
+    },
+    {
+     "t": "p",
+     "text": "The management of the company will monitor the operation of this policy. It is reviewed at least annually and is made available to all employees, subcontractors and interested parties."
+    }
+   ]
+  },
+  {
+   "key": "quality",
+   "title": "Quality Policy",
+   "blocks": [
+    {
+     "t": "p",
+     "text": "We are committed to delivering high-quality services to our clients. We believe that quality is the key to our success and the satisfaction of our customers."
+    },
+    {
+     "t": "p",
+     "text": "Our quality policy is based on the following principles:"
+    },
+    {
+     "t": "ul",
+     "items": [
+      "Understanding our clients' needs: We will listen carefully to our clients' requirements and work with them to understand their needs and expectations.",
+      "Skilled and experienced workforce: We will employ skilled and experienced tradespeople who have the necessary training and qualifications to perform their work to a high standard.",
+      "High-quality materials: We will use only the highest-quality materials and equipment available to ensure that our work is of the highest standard.",
+      "Compliance with industry standards: We will comply with all relevant industry standards and regulations to ensure that our work is safe, legal, and ethical.",
+      "Continuous improvement: We are committed to continuous improvement and will strive to improve our processes and procedures to deliver even better results for our clients.",
+      "Customer satisfaction: We will measure our success by the satisfaction of our clients and will work to exceed their expectations in every project we undertake."
+     ]
+    },
+    {
+     "t": "h",
+     "text": "To achieve our quality policy, we will"
+    },
+    {
+     "t": "ul",
+     "items": [
+      "Set clear quality objectives and targets",
+      "Monitor and measure our performance against these objectives and targets",
+      "Review and continually improve our processes and procedures to ensure that we are delivering high-quality work",
+      "Train and develop our employees to ensure that they have the skills and knowledge required to perform their work to the highest standard",
+      "Communicate our quality policy to all employees, clients, and stakeholders to ensure that everyone is aware of our commitment to quality."
+     ]
+    },
+    {
+     "t": "p",
+     "text": "This policy will be regularly reviewed to ensure that it remains relevant and appropriate to the needs of our business and our clients."
+    },
+    {
+     "t": "h",
+     "text": "Arrangements"
+    },
+    {
+     "t": "p",
+     "text": "The company implements the following measures to ensure that high standards of quality are upheld:"
+    },
+    {
+     "t": "ul",
+     "items": [
+      "Quality control inspections: The company will conduct regular quality control inspections at different stages of the process to ensure that the work meets the required quality standards. The inspections can be conducted by a qualified inspector or supervisor who can identify any issues or defects and address them promptly.",
+      "Training and development: The company will provide regular training and development opportunities for their workers to ensure that they have the necessary skills and knowledge to perform their work to a high standard. This can include training in new techniques and materials, safety procedures, and quality control standards.",
+      "Materials and equipment: The company will ensure that high-quality materials and equipment are used in all projects to ensure that the work meets the required quality standards. The materials and equipment should be sourced from reputable suppliers who can provide the necessary certifications and warranties.",
+      "Documentation and record keeping: The company will maintain detailed records of all projects, including the materials used, the work performed, and any inspections or tests conducted. This documentation can be used to verify that the work meets the required quality standards and can be provided to clients or regulatory bodies if required.",
+      "Communication and feedback: We maintain open communication with our clients to ensure that their needs and expectations are being met. We seek feedback from their clients after each project to identify areas for improvement and make any necessary changes to our processes or procedures.",
+      "Continuous improvement: The company will continuously improve their processes and procedures based on feedback from clients, inspections, and industry best practices. They can also review their quality policy regularly to ensure that it remains relevant and appropriate to the needs of their business and their clients."
+     ]
+    },
+    {
+     "t": "p",
+     "text": "By making these arrangements, we can ensure that quality standards are upheld and that their clients receive high-quality work that meets their needs and expectations."
+    },
+    {
+     "t": "p",
+     "text": "The company will implement the following measures to ensure that the supply chain implements quality measures within their business:"
+    },
+    {
+     "t": "ul",
+     "items": [
+      "Supplier selection: The company will select suppliers who have a proven track record of providing high-quality materials and equipment. The company will ensure that suppliers complete our supplier application form & have the relevant quality measures in place to ensure they are competent.",
+      "Quality requirements: The company will clearly communicate our quality requirements to our suppliers, including any industry standards or regulations that must be met. The quality requirements should be included in the supplier contract or purchase order.",
+      "Inspection and testing: The company may conduct inspections and testing of the materials and equipment received from their suppliers to ensure that they meet the required quality standards. This can include visual inspections, measurements, and laboratory testing if necessary.",
+      "Supplier audits: The company may conduct periodic audits of their suppliers to ensure that their quality control processes are being followed. The audit can include a review of the supplier's quality manual, procedures, and records.",
+      "Non-conformance management: If any materials or equipment received from a supplier do not meet the required quality standards, the company will follow have a non-conformance management process in place. This process should include documenting the non-conformance, notifying the supplier, and working with the supplier to resolve the issue.",
+      "Performance monitoring: The company will monitor the performance of their suppliers over time, including their delivery times, quality, and responsiveness. This information can be used to evaluate the supplier's performance and make any necessary changes to the supplier relationship."
+     ]
+    },
+    {
+     "t": "p",
+     "text": "The company will implement the following measures to ensure that training standards are upheld:"
+    },
+    {
+     "t": "ul",
+     "items": [
+      "Identify quality-related training needs: The company will identify the quality- related training needs of their workforce, based on the types of projects they are likely to bid for. This will be done by reviewing the project specifications and requirements and determining the specific skills and knowledge needed to meet those requirements.",
+      "Develop a training plan: The company will develop a training plan that outlines the types of quality-related training that will be provided, the delivery methods, and the timing of the training. The plan should be based on the identified training needs and should include both initial and ongoing training.",
+      "Provide training on quality standards and regulations: The company will provide training on quality standards and regulations relevant to the type of work they will be bidding for. This can include training on local building codes, industry standards, and regulations governing construction practices.",
+      "Provide training on quality control processes: The company will provide training on the quality control processes that are in place within the organization. This can include training on quality control procedures for materials, workmanship, and final inspections.",
+      "Use a variety of training methods: The company will use a variety of training methods to ensure that the training is effective and engaging. This can include classroom training, on-the-job training, e-learning, and coaching and mentoring.",
+      "Evaluate training effectiveness: The company will evaluate the effectiveness of the training provided, by soliciting feedback from the trainees and reviewing their performance on the job. The evaluation can be used to identify any gaps in the training and to make any necessary improvements.",
+      "Provide ongoing training and information: The company will provide ongoing training and information to their workforce on quality-related matters. This can include regular updates on changes to quality standards and regulations, refresher training on quality control processes, and opportunities for employees to learn new skills and techniques."
+     ]
+    },
+    {
+     "t": "p",
+     "text": "By providing quality-related training and information to their workforce, the company can ensure that their employees have the necessary skills and knowledge to meet the quality standards and requirements of the projects they bid for. This can help to enhance the organization's reputation for quality and increase their chances of winning future projects."
+    }
+   ]
+  },
+  {
+   "key": "anti-bribery",
+   "title": "Anti-Bribery Policy",
+   "blocks": [
+    {
+     "t": "h",
+     "text": "Introduction"
+    },
+    {
+     "t": "p",
+     "text": "The company is committed to implementing and enforcing effective systems to counter bribery. It is the company’s policy to conduct all aspects of its business in an honest and ethical manner. This policy applies to all individuals working for the Company, including service providers such as consultants or contractors."
+    },
+    {
+     "t": "p",
+     "text": "This policy is designed to help the Company act in accordance with the Bribery Act 2010. The company has a zero-tolerance policy regarding to bribery."
+    },
+    {
+     "t": "p",
+     "text": "Under UK law (UK Bribery Act 2010), bribery and corruption is punishable for individuals by up to ten years imprisonment. If the Company is found to have taken part in the corruption or lacks adequate procedures to prevent Bribery, it could face an unlimited fine and be excluded from tendering for Government contracts."
+    },
+    {
+     "t": "h",
+     "text": "Definitions"
+    },
+    {
+     "t": "p",
+     "text": "Bribe is a financial or other advantage offered or given to anyone to persuade them to or reward them for performing their duties improperly, or, with the intention of influencing them in the performance of their duties. Hospitality is the practice of being hospitable, this includes the reception and entertainment of guests / visitors. Kickbacks or facilitation payments are typically small payments made in return for a business favour or advantage."
+    },
+    {
+     "t": "h",
+     "text": "Policy Statement"
+    },
+    {
+     "t": "h",
+     "text": "The company will not"
+    },
+    {
+     "t": "ul",
+     "items": [
+      "Make contributions of any kind with the purpose of gaining any commercial advantage.",
+      "Provide gifts or hospitality with the intention of persuading anyone to act improperly, or to influence a public official in the performance of their duties.",
+      "Make, or accept, “kickbacks” of any kind."
+     ]
+    },
+    {
+     "t": "h",
+     "text": "The company will"
+    },
+    {
+     "t": "ul",
+     "items": [
+      "Keep appropriate internal records that will evidence the business reason for making any payments to third parties.",
+      "Encourage employees to raise concerns about any issue or suspicion of malpractice at the earliest possible stage.",
+      "See that anyone raising a concern about bribery will not suffer any detriment as a result, even if they turn out to be mistaken."
+     ]
+    },
+    {
+     "t": "h",
+     "text": "Employee Responsibility"
+    },
+    {
+     "t": "p",
+     "text": "Employees must not accept, request or offer any financial or other reward from any person in return for providing some favour."
+    },
+    {
+     "t": "h",
+     "text": "Gifts and Hospitality"
+    },
+    {
+     "t": "p",
+     "text": "This policy does not prohibit giving and receiving promotional gifts of low value, or normal and appropriate hospitality. Receiving promotional gifts of low value is normal and appropriate; however, gifts with a value exceeding £25.00 may not be accepted without approval. Any gift offered and then refused because of its value, must be reported to The Company. Business gifts are primarily aimed at thanking customers and suppliers for their custom and loyalty, only authorised gifts may be given."
+    },
+    {
+     "t": "h",
+     "text": "Receiving Hospitality"
+    },
+    {
+     "t": "p",
+     "text": "The acceptance of corporate hospitality must be transparent; all invitations must be reported to the company before an employee accepts any invitation. Business, travel & meal expenses are exempt while attending conferences, seminars, sponsored by third parties. Company hospitality is primarily aimed at thanking customers and suppliers for their custom and loyalty. All hospitality events must have approval. No donations should be made to charities, political parties or other organisations without approval."
+    },
+    {
+     "t": "h",
+     "text": "Non-Compliance"
+    },
+    {
+     "t": "h",
+     "text": "Staff"
+    },
+    {
+     "t": "p",
+     "text": "Failing to observe Company policy may lead to disciplinary action in accordance with the Company’s Disciplinary Policy."
+    },
+    {
+     "t": "h",
+     "text": "Visitors"
+    },
+    {
+     "t": "p",
+     "text": "In the event of a breach of the policy by other organisations, or individuals, the Company will take assess the breach & take appropriate action."
+    },
+    {
+     "t": "h",
+     "text": "Monitoring of this policy"
+    },
+    {
+     "t": "p",
+     "text": "The policy will be reviewed annually & monitored on an on-going basis to ensure that it addresses issues effectively & is in line with current legislation & good practice. The company will ensure that all individuals working for the company are advised of this policy & assess any reported incidents. Individuals will be made aware of any changes to this policy. Should any amendments, revisions, or updates be made to this policy it is the responsibility of the Company senior management to see that all relevant employees receive notice."
+    }
+   ]
+  },
+  {
+   "key": "equal-opportunities",
+   "title": "Equal Opportunities Policy",
+   "blocks": [
+    {
+     "t": "h",
+     "text": "Policy statement"
+    },
+    {
+     "t": "p",
+     "text": "The company is committed to the promoting equal opportunities internally & throughout our supply chain. We manage this process by developing policies, implementing them in the organization & communicating the policy throughout the supply chain."
+    },
+    {
+     "t": "p",
+     "text": "The company recognizes that we live in a society where discrimination still operates to the disadvantage of many groups in society & believes that all people should have equal rights and equal opportunities to be educated, work, receive services & participate in society."
+    },
+    {
+     "t": "p",
+     "text": "The objective of this policy is that no person should suffer or experience less favourable treatment, discrimination or lack of opportunities on the grounds of gender, race, colour, nationality, ethnic origin, religious or philosophical beliefs, health status, HIV status, age, marital status, parental status, sexual orientation, political beliefs or trade union membership, class, responsibility for dependents, physical attributes, ex-offender status as defined by the Rehabilitation of OffendersAct 1974, lack of formal qualifications where such qualifications are not formally required, or any other grounds which cannot be shown to be justifiable within the context of this policy."
+    },
+    {
+     "t": "p",
+     "text": "In the provision of services and the employment of staff, the company is committed to promoting equal opportunities for everyone. The company will treat all people equally, whether they are a customer, employee, trainee or volunteer. The Equality Act 2010 has protected characteristics, which are:"
+    },
+    {
+     "t": "p",
+     "text": "Age, disability, gender reassignment, marriage and civil partnership, pregnancy and maternity, race, religion or belief sex and sexual orientation. The company will also comply with the requirements of the following legislation:"
+    },
+    {
+     "t": "ul",
+     "items": [
+      "The Human Rights Act 1998.",
+      "The Work and Families Act 2006.",
+      "Employment Equal Treatment Framework Directive 2000 (as amended)."
+     ]
+    },
+    {
+     "t": "h",
+     "text": "The company will"
+    },
+    {
+     "t": "ul",
+     "items": [
+      "Communicate this policy to all stakeholders within the business.",
+      "Incorporate equal opportunity notices into general communication practices.",
+      "Ensure that the resources are available to comply with this policy.",
+      "Ensure that those involved in the recruitment process are trained in appropriate selection techniques."
+     ]
+    },
+    {
+     "t": "h",
+     "text": "Conduct and general standards of behaviour"
+    },
+    {
+     "t": "p",
+     "text": "The company defines unacceptable behaviour as the following:"
+    },
+    {
+     "t": "ul",
+     "items": [
+      "Showing or distributing offensive material.",
+      "Physical violence.",
+      "Verbal threats.",
+      "Swearing at others.",
+      "Persistent rudeness.",
+      "Isolating, ignoring or refusing to work with certain people.",
+      "Telling offensive jokes.",
+      "Name calling.",
+      "Any other behaviour which could be deemed victimising or harassing."
+     ]
+    },
+    {
+     "t": "p",
+     "text": "The items on the above list of unacceptable behaviours are considered to be disciplinary offences and can lead to disciplinary action being taken. It is important for staff who may have caused offence to understand that it is no defence to say that they did not intend to do so, or to blame individuals for being oversensitive. It is the impact of the behaviour, rather than the intent, that counts, and that should shape the solution found both to the immediate problem and to preventing further similar problems in the future. When an individual is found to have engaged in unacceptable behaviour, the company will investigate the behaviour & take appropriate action."
+    },
+    {
+     "t": "h",
+     "text": "Complaints"
+    },
+    {
+     "t": "p",
+     "text": "The company will investigate all complaints of unlawful discrimination on any forbidden grounds made by employees, clients or other third parties and will take action where appropriate. The complainant will be notified of the outcome of the investigation. The number of complaints will be monitored & lessons learned will be implemented within the company"
+    },
+    {
+     "t": "h",
+     "text": "Recruitment"
+    },
+    {
+     "t": "p",
+     "text": "We will ensure that through appropriate training employees, making selection and recruitment decisions will not discriminate, whether consciously or unconsciously, in making these decisions. Promotion and selection will be based on merit and all decisions relating to this will be made within the overall framework and principles of this policy. Job descriptions will be written in line with our equal opportunities policy. Job requirements will be reflected accurately in any personnel specifications. We will adopt a consistent, non-discriminatory approach to the advertising of vacancies. All applicants who apply for jobs with us will receive fair treatment and will be considered solely on their ability to do their job. Interviewing will be carried out by more than one person where possible. Interview questions will be related to the requirements of the job and not of a discriminatory nature. Selection decisions will not be influenced by any perceived prejudices of other staff."
+    },
+    {
+     "t": "h",
+     "text": "Monitoring"
+    },
+    {
+     "t": "p",
+     "text": "This policy will be reviewed annually & in line with any changed to legislation. All employees will be briefed on the contents of this policy."
+    },
+    {
+     "t": "p",
+     "text": "The results of any monitoring procedure will be reviewed at regular intervals to assess the effectiveness of the implementation of this policy. Consideration will be given, if necessary, to adjusting this policy to afford greater equality of opportunities to all applicants and staff."
+    },
+    {
+     "t": "h",
+     "text": "Anti Slavery and Human Trafficking Statement"
+    },
+    {
+     "t": "p",
+     "text": "The Modern Slavery Act of 2015 requires certain businesses to provide disclosure concerning their efforts, if any, to address the issues of slavery and human trafficking in their supply chains. The disclosures are intended to provide clients with the ability to make better, more informed choices about the company which they support."
+    },
+    {
+     "t": "p",
+     "text": "The Company is committed to maintain and improving systems and processes to avoid complicity in human rights violations related to our own operations and that of our supply chain. The Company recognises that slavery and human trafficking can occur in many forms. Therefore, throughout this disclosure we use the terms “slavery and human trafficking” to encompass various forms of coerced labour."
+    },
+    {
+     "t": "p",
+     "text": "Our commitment to human rights is outlined in our Code of Conduct. We have a commitment to improve and implement the Code of Conduct across our supply chain."
+    },
+    {
+     "t": "p",
+     "text": "The Company takes steps to verify, evaluate and address risks of slavery and human trafficking in our supply chain. The first step in this process is to set clear expectations for our suppliers. Our Code of Conduct states “We do not tolerate forced, debt bonded, indentured labour practices or human trafficking. The Company does not allow harsh or inhumane treatment, including corporal punishment or the threat of corporal punishment….. We expect our suppliers and others to meet these expectations”. Our Code on Conduct also, in turn, provides that “forced, bonded (including debt bondage) or indentured labour, involuntary prison labour, slavery or trafficking of persons shall not be used”."
+    },
+    {
+     "t": "p",
+     "text": "We regularly notify our suppliers of their obligation to comply with our Code of Conduct. The Company’s Managing Director sets the tone of our ethical culture and holds management accountable for communicating ethics and compliance expectations. Each year our Managing Director communicates with employees and senior managers regarding the importance of ethics and legal compliance. We believe that this “message from the top” along with ethics and compliance training and regular communication throughout the year, helps to create an ethical and legally compliant culture within the business."
+    },
+    {
+     "t": "p",
+     "text": "Through our Code of Conduct (which contains specific information on slavery and human trafficking) we seek to promote honest and ethical conduct, deter wrongdoing and support compliance with applicable laws and regulations. The principles embodied in our Code of Conduct reflect our policies related to but not limited to slavery, human trafficking, conflicts of interest, non-discrimination, antitrust, anti-bribery, and anti-corruption and protecting our company’s reputation. The Code of Conduct directs employees to consider short-term and long-term impacts on human rights and the community when making business decisions, and to report potential issues as soon as they are identified. We encourage anyone (including employees, sub-contractors, suppliers and clients) to report in good faith any issues or concerns about potential ethics, human rights, legal or regulatory violations, including improper or unethical business practices such as fraud or bribery."
+    }
+   ]
+  },
+  {
+   "key": "whistleblowing",
+   "title": "Whistleblowing Policy",
+   "blocks": [
+    {
+     "t": "h",
+     "text": "Introduction"
+    },
+    {
+     "t": "p",
+     "text": "Employees may, in properly carrying out their duties, have access to, or come into contact with, information of a confidential nature. Their terms and conditions provide that except in the proper performance of their duties, employees are forbidden from disclosing, or making use of in any form whatsoever, such confidential information."
+    },
+    {
+     "t": "p",
+     "text": "The law allows employees to make a ‘protected disclosure’ of certain information. In order to be ‘protected’, a disclosure must relate to a specific subject matter and the disclosure must also be made in an appropriate way. Whistleblowing protection is confined to a disclosure which, in the reasonable belief of the employee making the disclosure, is made in the public interest."
+    },
+    {
+     "t": "p",
+     "text": "The Company is committed to compliance with the Bribery Act 2010. The Company actively encourages a culture of honesty and openness and therefore all employees are required to bring up to their manager or other designated person any issue that, in the employee’s opinion, might constitute bribery or corruption."
+    },
+    {
+     "t": "h",
+     "text": "Specific Subject Matter"
+    },
+    {
+     "t": "p",
+     "text": "If, in the course of employment, an employee becomes aware of information which they reasonably believe tends to show one or more of the following:"
+    },
+    {
+     "t": "ul",
+     "items": [
+      "That a criminal offence has been committed, is being committed or is likely to be committed.",
+      "That a person has failed, is failing or is likely to fail to comply with any legal obligation to which he is subject.",
+      "That a miscarriage of justice that has occurred, is occurring, or is likely to occur.",
+      "That the health or safety of any individual has been, is being, or is likely to be, endangered.",
+      "That the environment, has been, is being, or is likely to be, damaged.",
+      "That information tending to show any of the above, is being, or is likely to be, deliberately concealed.",
+      "That the business or any associated person has been, is being, or is likely to be receiving or offering bribes.",
+      "That any foreign official has been, is being, or is likely to be bribed or offered facilitation payment by the company or any associated person. In the event of any of the above occurring, the procedure below must be followed:"
+     ]
+    },
+    {
+     "t": "h",
+     "text": "Disclosure Procedure"
+    },
+    {
+     "t": "ul",
+     "items": [
+      "Information which an employee reasonably believes to show one or more of the above should promptly be disclosed to a manager so that any appropriate action can be taken.",
+      "If it is inappropriate to make such a disclosure to the manager, the employee should speak to a Director.",
+      "Employees will suffer no detriment of any sort for making such a disclosure in accordance with this procedure.",
+      "However, failure to follow this procedure may result in the disclosure of information losing its ‘protected status.’",
+      "For further guidance in relation to this matter or concerning the use of the disclosure procedure generally, employees should speak in confidence to a manager"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "migrant-workers",
+   "title": "Migrant Workers Policy",
+   "blocks": [
+    {
+     "t": "p",
+     "text": "The Company has developed this Policy to support the fair employment of migrant workers and the prevention of illegal working in line with UK Government Legislation, namely the Immigration, Asylum and Nationality Act 2006. Its aim is to ensure fair recruitment of employees from outside the EU or support those from the accession states within the EU who have employment requirements placed on them by the UK Government. The policy applies equally to all employees of the Company including agency workers who may be recruited by the organisation. All documents must be kept for 2 years."
+    },
+    {
+     "t": "p",
+     "text": "The Company has a responsibility to ensure fair treatment processes are adhered to in line with current recruitment procedures. The Immigration, Asylum and Nationality Act 2006 is adhered to including the engagement of migrant workers obtaining the relevant permissions prior to work commencing or in case of Migrant Worker Status within one month of engagement, checking of information related to recruitment, changes in circumstances, annual checking etc. Ensuring that fair and transparent recruitment procedures are adhered to at all times allowing for the fair employment of migrant workers and the prevention of illegal working."
+    },
+    {
+     "t": "p",
+     "text": "The Company recognizes that it has responsibilities towards migrant workers under current Health and Safety Legislation, it will ensure that the following guidelines are followed:"
+    },
+    {
+     "t": "ul",
+     "items": [
+      "Make sure overseas workers have the necessary knowledge and skills to do the work for which they have been employed, competently and safely.",
+      "Make sure workers understand that the employer and employment agency/business or other labour provider have responsibilities for their health and safety.",
+      "Carry out a risk assessment of the tasks the worker will be expected to undertake.",
+      "Ensure the control measures identified in the assessment are effective, are in place and are maintained.",
+      "Pass relevant information on to the worker.",
+      "Review basic competencies, e.g. literacy, numeracy, physical attributes, general health, relevant work experience etc.",
+      "Check whether their vocational qualifications are compatible with those in GB.",
+      "Ensure that assessments are regularly reviewed to ensure they keep up to date with any changes to processes or working practices.",
+      "Provide essential induction training and any necessary job-related/vocational training.",
+      "Provide relevant information about the risks to which they may be exposed and the precautions they will need to take to avoid those risks.",
+      "Consider the needs of workers who may not speak English well, if at all, and whether you need translation services.",
+      "Ensure workers have received and understood the information, instruction and training they need to work safely and consider how to ensure it is acted upon. Ensure workers are adequately supervised and can communicate with their supervisors.",
+      "This Policy Statement has to be read in conjunction with The Home Office Guidelines 'Securing our Border - Controlling Immigration. Prevention of Illegal Working - Immigration, Asylum & Nationality Act 2006'"
+     ]
+    },
+    {
+     "t": "p",
+     "text": "List A - Documents which show an ongoing right to work - any of the documents or specified combination of documents, described in List A demonstrate that the holder is entitled to work in the UK and will provide employers with an excuse from liability to pay civil penalty if the employer follows the UK Border Guidelines."
+    },
+    {
+     "t": "p",
+     "text": "1. A passport showing that the holder, or a person named in the passport as the child of the holder, is a British citizen or a citizen of the United Kingdom and Colonies having the right of abode in the United Kingdom. 2. A passport or national identity card showing that the holder, or a person named in the passport as the child of the holder, is a national of a European Economic Area country or Switzerland. 3. A residence permit, registration certificate or document certifying or indicating permanent residence issued by the Home Office, the Border and Immigration Agency, or the UK Border Agency to a national of a European Economic Area country or Switzerland. 4. A permanent residence card or document issued by the Home Office, the Border and Immigration Agency, or the UK Border Agency to the family member of a national of a European Economic Area country or Switzerland. 5. A passport or other travel document endorsed to show that the holder is exempt from immigration control, is allowed to stay indefinitely in the United Kingdom, has the right of abode in the United Kingdom, or has no time limit on their stay in the United Kingdom. 6. An Immigration Status Document issued by the Home Office, the Border and Immigration Agency, or the UK Border Agency to the holder with an endorsement indicating that the person named in it is allowed to stay indefinitely in the United Kingdom or has no time limit on their stay in the United Kingdom. 7. A full birth certificate issued in the United Kingdom which includes the name(s) of at least one of the holder's parents. 8. A full adoption certificate issued in the United Kingdom which includes the name(s) of at least one of the holder's adoptive parents. 9. A birth certificate issued in the Channel Islands, the Isle of Man or Ireland. 10. An adoption certificate issued in the Channel Islands, the Isle of Man or Ireland. 11. A certificate of registration or naturalisation as a British Citizen. 12. A letter issued by the Home Office, the Border and Immigration Agency, or the UK Border Agency to the holder which indicates that the person named in it is allowed to stay indefinitely in the United Kingdom."
+    },
+    {
+     "t": "p",
+     "text": "List B - Documents which show a right to work for up to 12 months. Any of the documents, or specified combination of documents, in List B, can demonstrate that a person is entitled to work in the UK for a limited period. 1. A passport or travel document endorsed to show that the holder is allowed to stay in the United Kingdom and is allowed to do the type of work in question. 2. A Biometric Residence Permit issued by the UK Border Agency to the holder which indicates that the person named in it can stay in the United Kingdom and is allowed to do the work in question. 3. A residence card or document issued by the Home Office, the Border and Immigration Agency, or the UK Border Agency to a family member of a national of a European Economic Area country or Switzerland. 4. A work permit or other approval to take employment issued by the Home Office, the Border and Immigration Agency, or the UK Border Agency."
+    }
+   ]
+  },
+  {
+   "key": "bullying",
+   "title": "Prevention of Bullying and Harassment Policy",
+   "blocks": [
+    {
+     "t": "p",
+     "text": "Purpose: The purpose of this policy is to ensure that our workplace is free from bullying behavior, and to provide a framework for addressing and preventing incidents of bullying."
+    },
+    {
+     "t": "p",
+     "text": "Definition of Bullying: Bullying is defined as repeated and unreasonable behavior that is directed towards an individual or group, and which creates a risk to health and safety."
+    },
+    {
+     "t": "p",
+     "text": "Types of Bullying: Bullying can take many forms, including physical, verbal, and psychological abuse. Examples of bullying behavior include, but are not limited to, harassment, discrimination, intimidation, and belittlement."
+    },
+    {
+     "t": "p",
+     "text": "Prohibition of Bullying: The company will not tolerate any form of bullying behavior in the workplace. All employees, contractors, and stakeholders are expected to treat each other with respect, dignity, and courtesy."
+    },
+    {
+     "t": "p",
+     "text": "Prevention of Bullying: The company will take proactive measures to prevent bullying behavior from occurring in the workplace, including: a. Educating employees, contractors, and stakeholders about the negative impact of bullying on individuals and the workplace as a whole. b. Promoting a workplace culture that values respect, diversity, and inclusion. c. Encouraging employees, contractors, and stakeholders to report any incidents of bullying behavior to their manager or the HR department. d. Providing support and resources to employees who have been subjected to bullying behaviour."
+    },
+    {
+     "t": "p",
+     "text": "Investigation of Bullying Complaints: The company will investigate all complaints of bullying behaviour promptly, thoroughly, and impartially. Investigations will be carried out in a confidential manner, and all parties involved will be treated with respect and sensitivity."
+    },
+    {
+     "t": "p",
+     "text": "Consequences of Bullying: Any employee, contractor, or stakeholder found to have engaged in bullying behavior will be subject to disciplinary action, up to and including termination of employment or contract."
+    },
+    {
+     "t": "p",
+     "text": "Retaliation: The company will not tolerate any form of retaliation against an employee or contractor who reports bullying behavior or participates in an investigation into such behaviour."
+    },
+    {
+     "t": "p",
+     "text": "Communication of Policy: This policy will be communicated to all employees, contractors, and stakeholders, and will be made available on the company's intranet and website."
+    },
+    {
+     "t": "p",
+     "text": "By implementing this policy, the company can create a safe and respectful workplace environment for all employees, contractors, and stakeholders. This will enhance employee morale and productivity and will protect the company from potential legal liabilities associated with incidents of bullying behavior."
+    }
+   ]
+  },
+  {
+   "key": "drugs-alcohol",
+   "title": "Drugs and Alcohol Policy",
+   "blocks": [
+    {
+     "t": "p",
+     "text": "Drugs and alcohol can have effects on a person’s ability to perform their work safely and can present a danger to themselves and others."
+    },
+    {
+     "t": "p",
+     "text": "The company expects all employees to be free of any drugs (excluding non-prescription) or alcohol during their working hours."
+    },
+    {
+     "t": "p",
+     "text": "This policy is designed to comply with relevant legislation such as the Health & Safety at Work Act 1974 and the Misuse of Drugs Act 1971"
+    },
+    {
+     "t": "p",
+     "text": "Where an employee must take prescribed drugs then he/she should make their immediate supervisor aware of this if there is any doubt over the effect it could potentially have on their ability to work safely. This will be treated in the strictest confidence."
+    },
+    {
+     "t": "p",
+     "text": "The company will train relevant staff on how to identify & support staff who have drug & alcohol issues."
+    },
+    {
+     "t": "p",
+     "text": "The company approach to drugs and alcohol will consist of two approaches. Support and enforcement. The sections below detail these approaches."
+    },
+    {
+     "t": "p",
+     "text": "The company may conduct random drug and alcohol testing. When testing is conducted, consent will be taken."
+    },
+    {
+     "t": "p",
+     "text": "This policy will be communicated to all staff on employment & in line with any updates."
+    },
+    {
+     "t": "h",
+     "text": "Enforcement"
+    },
+    {
+     "t": "p",
+     "text": "Our policy on drugs and alcohol will be strictly enforced. Disciplinary action will be taken when breaches occur."
+    },
+    {
+     "t": "p",
+     "text": "If there is evidence that an employee has a problem with drugs or alcohol and cannot carry out their duties correctly then they will not be allowed to carry out work. They will be suspended and not be allowed to return to work until they are in control of their faculties and free from drug use."
+    },
+    {
+     "t": "p",
+     "text": "Possessing of dealing illegal drugs on company premises will be reported to the police."
+    },
+    {
+     "t": "p",
+     "text": "If an agency worker, contractor or other supplier is found to have breached our policy, services may be terminated."
+    },
+    {
+     "t": "h",
+     "text": "Support"
+    },
+    {
+     "t": "p",
+     "text": "The company policy is to take a proactive approach towards alcohol and drug issues. The company will encourage staff to disclose issues as early as possible to ensure that support can be sought at the earlies opportunity."
+    },
+    {
+     "t": "p",
+     "text": "All reported problems will be treated in the strictest confidence subject to the provisions of law."
+    },
+    {
+     "t": "p",
+     "text": "The company will ensure managers are aware of the symptoms of drug and/ or alcohol abuse, which include but are not limited to the following:"
+    },
+    {
+     "t": "ul",
+     "items": [
+      "Sudden mood changes",
+      "Unusual irritability",
+      "A tendency to become confused",
+      "Abnormal fluctuations in concentration and energy.",
+      "Impaired job performance.",
+      "Poor time keeping",
+      "Dishonesty and theft (arising from the need to maintain a habit)",
+      "Deteroration in relationships with fellow colleagues.",
+      "Slurred speech and smell of alcohol."
+     ]
+    },
+    {
+     "t": "p",
+     "text": "The support given by the company is as follows:"
+    },
+    {
+     "t": "ul",
+     "items": [
+      "The manager will assist the employee in recognizing the problem. This will be through encouraging the employee to seek help through their own General Practitioner.",
+      "Time off may be allowed for employees to seek treatment or attend support groups.",
+      "During treatment, the company may allow the employee to take sick leave, perform restricted duties or change job role if appropriate."
+     ]
+    },
+    {
+     "t": "h",
+     "text": "External Support"
+    },
+    {
+     "t": "h",
+     "text": "Drinkline"
+    },
+    {
+     "t": "p",
+     "text": "Helpline: 0800 917 8282 Drinkline runs a free, confidential helpline for people who are concerned about their own drinking, or someone else's."
+    },
+    {
+     "t": "h",
+     "text": "NHS Choices Website"
+    },
+    {
+     "t": "p",
+     "text": "http://www.nhs.uk/conditions/Alcohol-misuse/Pages/Introduction.aspx http://www.nhs.uk/Livewell/drugs/Pages/Drugtreatment.aspx National Health Service advice pages for drug & alcohol misuse."
+    },
+    {
+     "t": "h",
+     "text": "Drinkaware"
+    },
+    {
+     "t": "p",
+     "text": "https://www.drinkaware.co.uk/ Drinkaware works to reduce alcohol misuse and harm in the UK."
+    },
+    {
+     "t": "h",
+     "text": "Al-Anon"
+    },
+    {
+     "t": "p",
+     "text": "http://www.al-anonuk.org.uk Provide support to anyone whose life is, or has been, affected by someone else’s drinking, regardless of whether that person is still drinking or not."
+    },
+    {
+     "t": "h",
+     "text": "Alcoholics Anonymous Great Britain"
+    },
+    {
+     "t": "p",
+     "text": "http://www.alcoholics-anonymous.org.uk AA is an organisation of men and women who share their experience with each other hoping to solve their problems and help others to recover from alcoholism."
+    },
+    {
+     "t": "h",
+     "text": "We are with you"
+    },
+    {
+     "t": "p",
+     "text": "https://www.wearewithyou.org.uk Support for people with drug, alcohol or mental health issues"
+    },
+    {
+     "t": "h",
+     "text": "Narcotics Anonymous"
+    },
+    {
+     "t": "p",
+     "text": "www.ukna.org Helpline for the UK: 0300 999 1212 N.A. is a non-profit fellowship of recovering addicts who meet regularly to help each other stay clean."
+    }
+   ]
+  },
+  {
+   "key": "mental-health",
+   "title": "Mental Health and Wellbeing Policy",
+   "blocks": [
+    {
+     "t": "h",
+     "text": "Policy Statement"
+    },
+    {
+     "t": "p",
+     "text": "The company is committed to protecting the mental health & wellbeing of all employees. The company aims to achieve this by monitoring & improving the culture of the organization & reducing harmful behaviours & processes."
+    },
+    {
+     "t": "p",
+     "text": "The company will promote mental health & establish processes that enhance mental health & wellbeing as far as reasonably practicable."
+    },
+    {
+     "t": "p",
+     "text": "The company aims to provide a working environment that promotes and supports the mental health and wellbeing of all employees."
+    },
+    {
+     "t": "p",
+     "text": "This policy will comply with Health and Safety legislation and best practice guidelines & is written in conjunction with other company policies such as the drug & alcohol policy."
+    },
+    {
+     "t": "p",
+     "text": "The company aims to provide a supportive culture, address factors that may negatively affect mental wellbeing, and to develop management skills."
+    },
+    {
+     "t": "p",
+     "text": "In line with our policy statement, the company will carry out the following actions to achieve the aims set out in the statement:"
+    },
+    {
+     "t": "ul",
+     "items": [
+      "Reduce discrimination and stigma by increasing awareness and understanding.",
+      "Identify mental health needs within the workforce.",
+      "Give employees information on and increase their awareness of mental wellbeing.",
+      "Ensure staff are made aware of the company mental health policy.",
+      "Provide opportunities for employees to look after their mental wellbeing, for example through physical activity, stress reducing activities and social events.",
+      "Provide systems that encourage predictable working hours, reasonable workloads and flexible working practices where appropriate.",
+      "Ensure all staff have clearly defined job descriptions, objectives and responsibilities and provide them with good management support, appropriate training and adequate resources to do their job.",
+      "Manage conflict effectively and ensure the workplace is free from bullying and harassment, discrimination and racism.",
+      "Establish good two-way communication to ensure staff involvement, particularly during periods of organisational change.",
+      "Ensure that employees have a clearly defined role within the organisation and a sense of control over the way their work is organised.",
+      "Ensure that job design is appropriate to the individual, with relevant training, supervision and support provided as required",
+      "Ensure a physical environment that is supportive of mental health and wellbeing including a sound, ergonomically designed workstation or working situation with appropriate lighting, noise levels, heating, ventilation and adequate facilities for rest breaks",
+      "Promote and support opportunities to enhance professional development, identified through the appraisal.",
+      "Provide training for designated staff in the early identification, causes and appropriate management of mental health issues such as anxiety, depression, stress and change management.",
+      "Ensure individuals suffering from mental health problems are treated fairly and consistently.",
+      "Assist staff who are returning to work where possible. (Phased return)",
+      "Give non-judgmental and pro-active support to individual staff that experience mental health problems",
+      "Ensure employees are aware of the support that can be offered through the company or alternatively, their GP.",
+      "Make every effort to identify suitable alternative employment, in consultation with the employee, where a return to the same job is not possible due to identified risks or other factors.",
+      "Treat employee mental health matters as confidential & issues are only to be shared on a ‘need to know’ basis with consent of the employee.",
+      "Ensure that all staff involved in recruitment and selection are briefed on mental health issues and the Disability Discrimination Act.",
+      "Ensure all supervisors have information and training about managing mental health in the workplace.",
+      "Adopt the principles of the HSE Stress Management Standards for employees or groups of employees that it is felt may be affected by stress."
+     ]
+    },
+    {
+     "t": "h",
+     "text": "Communication"
+    },
+    {
+     "t": "p",
+     "text": "All employees will be made aware of this policy and what support is available to them. Regular updates will be provided to all employees via management. Employees participating in any of the mental wellbeing activities will be regularly asked for feedback. This policy will be reviewed annually in line with any legislative updates or feedback from employees."
+    }
+   ]
+  },
+  {
+   "key": "fatigue",
+   "title": "Fatigue Policy",
+   "blocks": [
+    {
+     "t": "p",
+     "text": "Policy aims. The purpose of this policy is to highlight the effects and risks of employee fatigue, the shared responsibility to manage it appropriately, the preventative actions that should be planned and taken to minimize the associated risks, to include establishing hours of service limitations. The policy applies to all employees, and contractors, while performing on duty work or carrying out activities on behalf of the company, including:"
+    },
+    {
+     "t": "ul",
+     "items": [
+      "Those who work at offices, facilities, or remote areas on behalf of the company.",
+      "Those who work at remote sites requiring lengthy drives.",
+      "Those who undertake driving as part of their roles.",
+      "Those who travel on behalf of the business, this includes air travel and the use of rental vehicles."
+     ]
+    },
+    {
+     "t": "h",
+     "text": "Risks associated with fatigue"
+    },
+    {
+     "t": "p",
+     "text": "Fatigue is described as an acute and ongoing state of tiredness that leads to mental and/or physical exhaustion and prevents people from functioning within normal boundaries. It is normal to feel tired after prolonged mental or physical effort at work. Fatigue, however, is more than just feeling tired. The following signs indicate an individual may be suffering from fatigue:"
+    },
+    {
+     "t": "ul",
+     "items": [
+      "Headaches and/or dizziness",
+      "Difficulty keeping eyes open",
+      "Constant yawning",
+      "Muscle weakness",
+      "Lacking energyImmediate effects of fatigue may include:",
+      "Lack of concentration",
+      "Reduced short-term memory",
+      "Increased errors",
+      "Slower reaction times",
+      "Impaired decision-making and judgment (including being unaware of the state of fatigue)",
+      "Reduced immune system function"
+     ]
+    },
+    {
+     "t": "p",
+     "text": "Fatigue can accumulate over time, and may be caused by:"
+    },
+    {
+     "t": "h",
+     "text": "Work-related factors such as"
+    },
+    {
+     "t": "p",
+     "text": "length of time worked, inadequate rest breaks and/or sleep, harsh environmental conditions."
+    },
+    {
+     "t": "h",
+     "text": "Lifestyle factors such as"
+    },
+    {
+     "t": "p",
+     "text": "Poor quality of sleep, family responsibilities, social life & commuting time."
+    },
+    {
+     "t": "h",
+     "text": "Longer-term effects of fatigue may include"
+    },
+    {
+     "t": "ul",
+     "items": [
+      "High blood pressure and/or heart disease",
+      "Depression and/or anxiety",
+      "Diabetes and/or gastro-intestinal disorders"
+     ]
+    },
+    {
+     "t": "h",
+     "text": "Roles and Responsibilities"
+    },
+    {
+     "t": "p",
+     "text": "The first step in mitigating fatigue in the workplace environment is to identify risk that impact fatigue. Workplace environment, schedules, staffing levels, at home activity are the areas that primarily affect fatigue. Adequate staff level to complete job task reduces extra work upon individuals and minimizes the effect of fatigue. Scheduled activities, their frequency or deemed importance can place additional stress upon an employee. Clearly stated expectations of daily work, projects, response to abnormal field events all can reduce fatigue. Activities away from work can impact the individual and play a part in workplace fatigue. Ensure that you are well rested and mentally prepared for your commute to work and the following activities you encounter during the day."
+    },
+    {
+     "t": "h",
+     "text": "Team Leaders"
+    },
+    {
+     "t": "ul",
+     "items": [
+      "Must ensure the health and safety of all workers on all job sites.",
+      "Take all reasonable measures to eliminate or mitigate the risks of fatigue.",
+      "Take all steps reasonable to prevent a worker from working excessive hours."
+     ]
+    },
+    {
+     "t": "h",
+     "text": "Employees/Contractors"
+    },
+    {
+     "t": "ul",
+     "items": [
+      "Arrive at work adequately rested and prepared for on duty work.",
+      "Recognize personal limits.",
+      "Self-report any concerns related to fatigue prior to work commencing or during work",
+      "Keep track of work hours and inform your Team Leader if you are near hours of service limits (Defined below)"
+     ]
+    },
+    {
+     "t": "h",
+     "text": "Fatigue Mitigation"
+    },
+    {
+     "t": "p",
+     "text": "The company will make all employees aware of the below factors, which aid in the mitigation of fatigue. Individuals who are showing signs of fatigue will be advised of the below."
+    },
+    {
+     "t": "h",
+     "text": "Sleep"
+    },
+    {
+     "t": "p",
+     "text": "Sleep is the only effective long-term strategy to prevent and manage fatigue. While tired muscles can recover with rest, the brain can recover only with sleep. An adult generally requires seven to eight hours of sleep daily, taken in a single continuous period. When individuals get less sleep than they need in a day, they build up a sleep debt. Each additional day without enough sleep increases the debt which, when it becomes large enough, causes fatigue. The only way to reduce or cancel a sleep debt is by sleeping additional hours. Employees and contractors should be afforded 8 hours of continuous sleep."
+    },
+    {
+     "t": "h",
+     "text": "Rest periods"
+    },
+    {
+     "t": "p",
+     "text": "Established rest periods taken throughout the workday provide time to recover from work activities and relieve stress. Stress is associated with fatigue and plays a part in the effect on fatigue. Workers should take the time for lunch breaks away from the desk or from inside work vehicles whenever possible. A 15-minute break to stop work in harsher conditions i.e., heat, cold, loud machinery can have immediate effects upon the worker and is recommended at periodic intervals."
+    },
+    {
+     "t": "h",
+     "text": "Establishing work limitations"
+    },
+    {
+     "t": "p",
+     "text": "Work limitations which include ‘not to exceed’ hours provide an environment that aids in fatigue managing. Establishing work limitations either by policy direction or specific to jobs prior to work started can relieve any doubt or confusion managing a person’s well-being when it comes to fatigue. Scheduling work activities is also an integral part of managing fatigue. Clearly defined job types or maintenance planning managed; accordingly, will not cause excessive hours, or conflicts with other priorities. Use of scheduling tools can aid and identify ahead of time if an employee will be working excessive hours."
+    },
+    {
+     "t": "h",
+     "text": "Working Requirements"
+    },
+    {
+     "t": "p",
+     "text": "Hours of service or on duty work shall not exceed 14 hours in any 24-hour period. The hours-of-service limit of 14 hours include the commute to and from the work site."
+    },
+    {
+     "t": "p",
+     "text": "Do not work over 60 hours during a 7-day continuous period. If exceeded, a minimum of 24 hours off from the work environment is mandatory."
+    },
+    {
+     "t": "h",
+     "text": "Driver Requirements"
+    },
+    {
+     "t": "p",
+     "text": "Do not drive more than 10 hours of service within a rolling 24-hour period."
+    },
+    {
+     "t": "p",
+     "text": "The maximum driving time before taking a break is 4.5 hours. After driving 4.5 hours a 30 min break is mandatory."
+    },
+    {
+     "t": "p",
+     "text": "Attempt to take 15 min breaks for every 2 hours of driving."
+    },
+    {
+     "t": "h",
+     "text": "Business Travel Requirements"
+    },
+    {
+     "t": "p",
+     "text": "Business travel that includes the use of a personal vehicle or rental car, commute travel to and from the airport from home, work site, hotel, rental agency, and any aircraft flight time; shall not exceed 14 hours in a rolling 24-hour period."
+    },
+    {
+     "t": "h",
+     "text": "Exceeding Hours of Service"
+    },
+    {
+     "t": "p",
+     "text": "Under extraordinary situations or emergency events hours of service may be in jeopardy of being exceeded and must be discussed with your Team Leader and approved by the Construction Manager prior to continuing work. During this conversation, effects of continued work past the hours of service should be discussed, additional risks identified and understood. If possible, implore fatigue mitigation strategies such as mandatory break period, stimulation, check-in upon fatigue status, and alternate plans for driving, or sleep accommodations after the work is completed. Follow up documentation or next day email pertaining to work-related event(s) can detail any related hours-of-service exceedance."
+    }
+   ]
+  },
+  {
+   "key": "risk-management",
+   "title": "Risk Management Policy",
+   "blocks": [
+    {
+     "t": "p",
+     "text": "Purpose: The purpose of this policy is to ensure that the risks associated with the business activities of the company are effectively managed, including the requirement to sign risk assessments & method statements. This policy will provide a framework for identifying, assessing, and controlling risks, and will ensure that risk management is integrated into all aspects of the business."
+    },
+    {
+     "t": "p",
+     "text": "Scope: This policy applies to all employees, contractors, and stakeholders involved in the business activities of the company."
+    },
+    {
+     "t": "p",
+     "text": "Risk Management Processes: The company will establish and maintain a risk management process that includes the following steps: a. Risk Identification: The company will identify all potential risks associated with their business activities, including those that arise from the use of equipment, materials, and tools, and those that arise from the environment in which the work is carried out. b. Risk Assessment: The company will assess the likelihood and severity of each identified risk, taking into account the consequences that may arise if the risk materializes. c. Risk Control: The company will implement measures to control and mitigate the risks identified, including the requirement to sign risk assessments & method statements prior to the commencement of work, to ensure that all parties involved in the work are aware of the identified risks and the measures in place to control them. d. Risk Monitoring and Review: The company will continuously monitor and review the effectiveness of the risk control measures in place and will adjust the measures as necessary to ensure that the risks associated with their business activities are effectively managed."
+    },
+    {
+     "t": "p",
+     "text": "Responsibilities: All employees and contractors have a responsibility to identify and report potential risks associated with their work activities to the management. The management is responsible for ensuring that the risk management processes are in place, and that employees and contractors are trained in the implementation of these processes. The management is also responsible for ensuring that risk assessments & method statements are signed prior to the commencement of work, and that all parties involved in the work are aware of the identified risks and the measures in place to control them."
+    },
+    {
+     "t": "p",
+     "text": "Continuous Improvement: The company will continuously review and improve their risk management processes, considering feedback from employees, contractors, and stakeholders, and changes in legislation and industry best practices."
+    },
+    {
+     "t": "p",
+     "text": "By implementing this risk management policy, a the company can ensure that the risks associated with their business activities are effectively managed, including the requirement to sign risk assessments & method statements. This will enhance the safety of our employees and contractors, minimize potential liabilities, and increase the confidence of clients and stakeholders in the companies ability to deliver quality work."
+    }
+   ]
+  },
+  {
+   "key": "privacy",
+   "title": "Privacy Policy",
+   "blocks": [
+    {
+     "t": "p",
+     "text": "The company gathers and processes your personal information in accordance with this privacy notice and in compliance with the General Data Protection Regulations (GDPR) and other relevant data protection regulations and laws. This notice provides you with necessary information regarding your rights and our obligation, and explains how, why and when we process your personal data."
+    },
+    {
+     "t": "h",
+     "text": "Information that we collect"
+    },
+    {
+     "t": "p",
+     "text": "We process your personal information to meet our legal, statutory and contractual obligations and to provide you with our products and services. We will never collect unnecessary personal data from you and do not process your information in any way other than as specified in this notice."
+    },
+    {
+     "t": "h",
+     "text": "The personal data that we collect is"
+    },
+    {
+     "t": "ul",
+     "items": [
+      "Names",
+      "Address",
+      "Telephone and fax numbers Mobile telephone numbers",
+      "Email address",
+      "Payment details."
+     ]
+    },
+    {
+     "t": "h",
+     "text": "We Collect Information in the following ways"
+    },
+    {
+     "t": "ul",
+     "items": [
+      "Receiving purchase orders",
+      "Gathering verbal information and recording it on our computer systems",
+      "Receiving payments from customers"
+     ]
+    },
+    {
+     "t": "h",
+     "text": "How we use your personal Data"
+    },
+    {
+     "t": "p",
+     "text": "The company takes your privacy very seriously and will never disclose, share or sell your data without your consent: unless required to do so by law. We retain your data only for as long as necessary and for the purpose specified in this notice. You are free to withdraw this consent at any time. The purpose and reason s for processing your personal data are detailed below:"
+    },
+    {
+     "t": "ul",
+     "items": [
+      "We collect your personal data in the performance of a contract or to provide a service and to ensure that orders are completed and can be sent to your preferred address."
+     ]
+    },
+    {
+     "t": "h",
+     "text": "Your rights"
+    },
+    {
+     "t": "p",
+     "text": "You have the right to access any personal information that we possess about you and to request information about;"
+    },
+    {
+     "t": "ul",
+     "items": [
+      "What personal data we hold about you",
+      "The purposes of the processing",
+      "The categories",
+      "Of personal data concerned",
+      "The recipients to whom the personal data has/will be disclosed",
+      "How long we intend to store your personal data for",
+      "If we did not collect the data directly from you, information about the source If you believe that we hold any incomplete or inaccurate data about you, you have the right to ask us to correct and/or complete the information and we will strive to do so as quickly as possible, but certainly within legal timeframes, unless there is a valid reason for not doing so. You also have the right to request erasure of your personal data or to restrict in accordance with the data protection laws. If we receive a request from you to exercise any of the above rights, we, we may ask you to verify your identity before acting on the request. This is to ensure your data is protected and kept secure."
+     ]
+    },
+    {
+     "t": "h",
+     "text": "Sharing and disclosing your personal information"
+    },
+    {
+     "t": "p",
+     "text": "We do not share or disclose any of your personal information without your consent, other than for the purposes specified in this notice or where there is a legal requirement. We may use third parties to provide the below services and business functions; however, all processors acting on our behalf process your data only in accordance with instructions from us and comply fully with this privacy notice, the data protection laws and any other appropriate confidentiality and security measures."
+    },
+    {
+     "t": "h",
+     "text": "Safeguarding measures"
+    },
+    {
+     "t": "p",
+     "text": "We take privacy seriously and take every reasonable measure and precaution to protect and secure your personal data. We work hard to protect you and your information from unauthorised access, alteration, disclosure or destruction."
+    },
+    {
+     "t": "h",
+     "text": "Transfers outside the EU"
+    },
+    {
+     "t": "p",
+     "text": "Personal data in the European Union is protected by the General Data Protection Regulation but some other countries may not necessarily have the same high standard of protection for your personal data. We do not transfer or store any personal data outside of the EU."
+    },
+    {
+     "t": "h",
+     "text": "Consequences of not providing your data"
+    },
+    {
+     "t": "p",
+     "text": "You are not obligated to provide your personal information to us. However, as this information is required for us to provide you with our services, we will not be able to offer some/all our services without it."
+    },
+    {
+     "t": "h",
+     "text": "How long we keep your data"
+    },
+    {
+     "t": "p",
+     "text": "We only ever retain personal information for as long as necessary and we have strict review and retention policies in place. We will keep your data on our systems for as longs as relationship exist between us, unless you ask us specifically to remove your details."
+    },
+    {
+     "t": "h",
+     "text": "Lodging a complaint"
+    },
+    {
+     "t": "p",
+     "text": "We process your personal information only in compliance with this privacy notice and in accordance with the relevant data protection laws. If, however you wish to raise a complaint regarding the processing of your personal data or are unsatisfied with how we have handled your information, you have the right to lodge a complaint with the supervisory authority."
+    }
+   ]
+  },
+  {
+   "key": "csr",
+   "title": "Corporate Social Responsibility Policy",
+   "blocks": [
+    {
+     "t": "p",
+     "text": "The Company has always understood the need to be a good corporate citizen. It is not only a moral obligation but in a Company that has always strived to build long-term relationships with its stakeholders, it is good for business."
+    },
+    {
+     "t": "p",
+     "text": "Sustainability is the ability to meet the needs of the present without compromising the ability of future generations to meet their own needs. The Company believes that sustainability and corporate responsibility are very closely linked."
+    },
+    {
+     "t": "p",
+     "text": "We aim to generate a sustainable return to our shareholders on a long-term basis. We recognise our obligations to all who have a stake in our success, shareholders, employees, customers, suppliers and wider society, and seek to keep our responsibilities to them in balance. We are committed to engaging with all our stakeholders in an open, honest and straightforward way and to promoting responsible business practices throughout the Company."
+    },
+    {
+     "t": "p",
+     "text": "We will establish a range of Corporate Responsibility and Sustainability targets, measure and review our performance against them and report on an annual basis."
+    },
+    {
+     "t": "p",
+     "text": "The Company corporate responsibility and sustainability policy is applied in four main areas: marketplace, workplace, environment and community."
+    },
+    {
+     "t": "h",
+     "text": "Marketplace"
+    },
+    {
+     "t": "p",
+     "text": "Our mission is to understand our clients’ business needs and deliver them in a way that delights those clients. We will provide products and services of good value and consistent quality, reliability and safety."
+    },
+    {
+     "t": "p",
+     "text": "We will develop products and services that help our clients and ourselves to reduce our impact on the environment, both during the course of construction and throughout the life of the completed assets."
+    },
+    {
+     "t": "p",
+     "text": "We will promote our services and ourselves in an ethical way at all times in accordance with our published Ethics policy."
+    },
+    {
+     "t": "p",
+     "text": "We recognise the importance of our supply chain and will develop secure long-term relationships with our suppliers and subcontractors based upon mutual trust. We undertake to pay them on time and according to agreed terms."
+    },
+    {
+     "t": "p",
+     "text": "Our purchasing power will be used in accordance with our Ethics policy and will not be used unscrupulously."
+    },
+    {
+     "t": "h",
+     "text": "Workplace"
+    },
+    {
+     "t": "p",
+     "text": "We recognise that our employees are our most important asset. Their commitment to our core values enables us to achieve our goals and build our reputation."
+    },
+    {
+     "t": "p",
+     "text": "We seek to recruit and retain good people that reflect the diversity of the communities in which we operate, to give equal opportunities to all of our staff, and to provide the training and development to help them have fulfilling and rewarding careers. We operate Equal Opportunities and Diversity polices to help us achieve this."
+    },
+    {
+     "t": "p",
+     "text": "The health and safety of our employees and all those that we come into contact with is of paramount importance. We operate a Safety Management System."
+    },
+    {
+     "t": "p",
+     "text": "We recognise that our responsibility extends beyond construction sites and have adopted policies to manage and minimise occupational road risk."
+    },
+    {
+     "t": "p",
+     "text": "We will involve employees in continuously improving their own work methods and those of the Company as a whole."
+    },
+    {
+     "t": "p",
+     "text": "We have a strategy of regular communication with employees that enables them to contribute to policy and strategy and helps them understand the importance of their roles to the organisation. We believe that this is vital for the success of the business."
+    },
+    {
+     "t": "h",
+     "text": "Environment"
+    },
+    {
+     "t": "p",
+     "text": "The Company recognises the fundamental importance of understanding the full impact of its activities on the environment and is committed to improving that impact through its Environmental policy."
+    },
+    {
+     "t": "p",
+     "text": "Our most significant contribution to the environment will be through continually improving our efficiency both on site and in our offices and reducing the amount of waste generated. Where we do generate waste we will look to recycle it."
+    },
+    {
+     "t": "p",
+     "text": "We will promote the use of recycled materials or those from sustainable sources."
+    },
+    {
+     "t": "p",
+     "text": "We will monitor our carbon emissions generated through energy use and employee travel and will adopt a carbon offsetting strategy that invests in research into improving the sustainability of the products and techniques that we use."
+    },
+    {
+     "t": "h",
+     "text": "Community"
+    },
+    {
+     "t": "p",
+     "text": "The Company is proud that our work, both in the public and private sectors, enhances the communities in which we operate. We maintain a local presence through offices close to our clients and the communities that provide our staff and supply chain."
+    },
+    {
+     "t": "p",
+     "text": "We support the local employment of trades and labour. We recognise the benefit that our profitability brings to the community in terms of employment, training, skills, and wealth creation."
+    }
+   ]
+  },
+  {
+   "key": "tax-evasion",
+   "title": "Prevention of the Facilitation of Tax Evasion Policy",
+   "blocks": [
+    {
+     "t": "p",
+     "text": "Facilitation of tax evasion under Criminal Finances Act 2017"
+    },
+    {
+     "t": "p",
+     "text": "This note comprises the policy of the Company (“we”) towards our responsibilities under the Criminal Finances Act 2017. The Act came into force on 30 September 2017."
+    },
+    {
+     "t": "p",
+     "text": "In overview, in line with all companies in the UK, we are required to take reasonable prevention procedures to prevent the facilitation of tax evasion either in the UK or abroad."
+    },
+    {
+     "t": "h",
+     "text": "Overarching approach"
+    },
+    {
+     "t": "p",
+     "text": "We are committed to taking reasonable steps to prevent involvement in the criminal facilitation of tax evasion. The commitment extends to anyone acting on our behalf."
+    },
+    {
+     "t": "h",
+     "text": "Risk assessment"
+    },
+    {
+     "t": "p",
+     "text": "Due to the nature of what we do, the risks are considered to be very low, bordering on remote. The main risks are presently thought to be: i) receiving an overpayment into our account, and being asked to refund it, thereby ‘cleaning’ the money; ii) being asked by a supplier to pay in cash, knowing or reasonably knowing that their intention is not to declare the receipt for VAT or other reasons."
+    },
+    {
+     "t": "h",
+     "text": "These risks are mitigated by"
+    },
+    {
+     "t": "ul",
+     "items": [
+      "Employing appropriately skilled staff with appropriate oversight by management.",
+      "Communicating clearly to staff that we are committed to preventing the facilitation of tax evasion.",
+      "The monitoring and enforcement of staff procedures.",
+      "The monitoring and enforcement of prevention procedures.",
+      "The only accepted payment methods of premiums is by way of bank transfer, credit or debit card and cheques; cash payments are declined in order to further mitigate any risks of potential facilitation of tax evasion. Regular reviews of procedures."
+     ]
+    },
+    {
+     "t": "p",
+     "text": "Other risks are seen as very low or remote, but are also mitigated by the above."
+    },
+    {
+     "t": "h",
+     "text": "Further detail"
+    },
+    {
+     "t": "p",
+     "text": "We will consider, and take appropriate advice on what if any ‘whistle blowing’ is required should we have any concerns of suspected facilitation."
+    },
+    {
+     "t": "p",
+     "text": "Appropriate employees of the finance department and all senior colleagues have been appraised of this law."
+    }
+   ]
+  }
+ ]
+}
