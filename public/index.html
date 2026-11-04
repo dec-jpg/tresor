@@ -124,8 +124,11 @@ async function shell(fresh) {
     const status = gaps ? `<span class="pill bad">${gaps} to sort</span>` : n.expiring ? `<span class="pill warn">${n.expiring} expiring</span>` : '<span class="pill ok">All in date</span>';
     const talks = c.talks.length ? c.talks.slice(0, 4).map(t => `<div class="talk"><span class="t">${esc(t.title)}</span><span class="s">${t.signed}/${t.expected}</span></div>`).join('') : '<p class="muted">No talks open for signing.</p>';
     return `<div class="client" style="--c:${esc(c.colour || '#1f3a5f')}"><div class="head"><div><h2>${esc(c.company || c.name)}</h2><div class="portal">${esc(c.portal || '')}</div></div>${status}</div>
-      <div class="nums"><div><b>${n.operatives}</b><span>operatives</span></div><div><b class="${gaps ? 'bad' : 'ok'}">${gaps}</b><span>expired / missing</span></div><div><b class="${n.expiring ? 'warn' : ''}">${n.expiring}</b><span>expiring</span></div></div>
-      <div class="body"><p class="mono" style="color:var(--ink-2);margin-bottom:.3rem">Talks open · ${c.talks.length}</p>${talks}
+      <div class="nums"><div><b>${n.operatives}</b><span>${c.kind === 'principal' ? 'on the register' : 'operatives'}</span></div><div><b class="${gaps ? 'bad' : 'ok'}">${gaps}</b><span>expired / missing</span></div><div><b class="${n.expiring ? 'warn' : ''}">${n.expiring}</b><span>expiring</span></div></div>
+      <div class="body">${c.kind === 'principal' ? `<p class="mono" style="color:var(--ink-2);margin-bottom:.3rem">Sites · ${n.live_jobs}</p>
+        <p><b>${n.on_site_now}</b> on site now · <b>${n.signins_today}</b> sign-ins today${n.open_findings ? ` · <span style="color:var(--warn)">${n.open_findings} open finding${n.open_findings === 1 ? '' : 's'}</span>` : ''}${n.refusals_7d ? ` · ${n.refusals_7d} refused sign-ins this week` : ''}</p>
+        ${(c.sites || []).filter(s => s.on_site).slice(0, 5).map(s => `<div class="talk"><span class="t">${esc(s.name)}</span><span class="s">${s.on_site} on site</span></div>`).join('')}
+        <p class="mono" style="color:var(--ink-2);margin:.6rem 0 .3rem">Talks open · ${c.talks.length}</p>` : `<p class="mono" style="color:var(--ink-2);margin-bottom:.3rem">Talks open · ${c.talks.length}</p>`}${talks}
         ${n.unmatched ? `<p class="small" style="margin-top:.6rem;color:var(--warn)">${n.unmatched} signature${n.unmatched === 1 ? '' : 's'} to match</p>` : ''}</div>
       <div class="foot"><span>Last sign-off ${ago(n.last_signoff)}</span><a class="btn ghost" href="${esc(c.url)}/admin" target="_blank" rel="noopener">Open portal</a></div></div>`;
   }).join('');
