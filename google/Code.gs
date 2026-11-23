@@ -53,7 +53,7 @@ function filePack_(d) {
   var bytes = Utilities.base64Decode(d.pdf);
   if (!(bytes[0] === 37 && bytes[1] === 80 && bytes[2] === 68 && bytes[3] === 70)) return { ok: false, error: 'Not a PDF.' }; // "%PDF"
   var folder = clientFolder_(d.company);
-  var name = clean_(d.filename || (d.company + ' - Supplemental Business Policies - signed')).replace(/\.pdf$/i, '') + '.pdf';
+  var name = clean_(d.filename || (d.company + ' - Business Policy Pack - signed')).replace(/\.pdf$/i, '') + '.pdf';
   var file = folder.createFile(Utilities.newBlob(bytes, 'application/pdf', name));
   try {
     MailApp.sendEmail({ to: CONFIG.NOTIFY_EMAIL, subject: 'Signed: ' + d.company + ' policy pack',

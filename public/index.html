@@ -201,7 +201,7 @@ async function packs(flash) {
   frame('Policy packs', 'For clients who are not on a portal. They get their own link, sign once, and the signed pack comes back here.');
   let d; try { d = await api('/api/packs'); } catch (e) { $('#content').innerHTML = `<div class="note err">${esc(e.message)}</div>`; return; }
   const waiting = d.packs.filter(p => p.status !== 'signed').length;
-  $('#asof').textContent = `Supplemental business policies, version ${d.version}. ${d.packs.length ? `${d.packs.length - waiting} signed, ${waiting} waiting.` : ''} ${d.google ? '' : 'Email and Google Drive are not connected yet: links are sent by hand and signed packs are kept here.'}`;
+  $('#asof').textContent = `Business Policy Pack, 18 policies, version ${d.version}. ${d.packs.length ? `${d.packs.length - waiting} signed, ${waiting} waiting.` : ''} ${d.google ? '' : 'Email and Google Drive are not connected yet: links are sent by hand and signed packs are kept here.'}`;
   const row = p => `<tr><td><b>${esc(p.company)}</b><div class="small muted">Ref ${esc(p.ref)} · ${p.policy_keys.length} policies</div></td>
     <td>${esc(p.signer)}<div class="small muted">${esc(p.email || 'no email')}</div></td>
     <td>${fmtDate(p.sent_at)}<div class="small muted">${esc(p.sent_by || '')}${p.emailed ? ' · emailed' : ' · link only'}</div></td>

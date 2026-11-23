@@ -14,8 +14,9 @@ main{padding:18px 16px 60px}
 .toc a{color:var(--brand)}
 @media(max-width:600px){.toc{columns:1}}
 .policy{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:22px 22px 14px;margin:0 0 16px;overflow-wrap:anywhere}
-.policy h2{margin:0;font-size:19px;text-align:center;text-transform:uppercase;letter-spacing:.02em}
-.policy .co{text-align:center;color:var(--muted);margin:2px 0 16px}
+.policy .pno{margin:0 0 2px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.policy h2{margin:0;font-size:20px}
+.policy .co{color:var(--muted);margin:2px 0 16px}
 .policy h3{font-size:16px;margin:18px 0 6px}
 .policy h3.big{text-align:center;font-size:17px;margin-top:26px}
 .policy p{margin:0 0 9px}

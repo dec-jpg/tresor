@@ -94,7 +94,7 @@
     $('name').value = pack.signer || '';
     $('role').value = pack.role || 'Director';
     $('toc').innerHTML = pack.policies.map(function (p) { return '<li><a href="#p-' + p.id + '">' + A.esc(p.title) + '</a></li>'; }).join('');
-    $('policies').innerHTML = pack.policies.map(function (p) { return A.policyHTML(p, pack.company); }).join('');
+    $('policies').innerHTML = pack.policies.map(function (p, i) { return A.policyHTML(p, { company: pack.company, signer: pack.signer || 'the Director', role: pack.role || 'Director' }, i + 1); }).join('');
     show('app', true);
     setupPad();
   }
