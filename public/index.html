@@ -212,6 +212,7 @@ async function packs(flash) {
     <div class="section"><h2>Send a pack</h2><div class="packform">
       <label for="pk-company" style="margin-top:0">Company name, exactly as it should appear on the policies</label><input id="pk-company" placeholder="e.g. RH Carpentry &amp; Joinery Ltd">
       <div class="two"><div><label for="pk-signer">Who is signing</label><input id="pk-signer" placeholder="e.g. Roy Hall"></div><div><label for="pk-role">Their position</label><input id="pk-role" value="Director"></div></div>
+      <label for="pk-about">What the company does, to finish the sentence "[Company] is ..."</label><input id="pk-about" placeholder="e.g. a joinery contractor working on new-build housing sites">
       <label for="pk-email">Their email</label><input id="pk-email" type="email" placeholder="name@company.co.uk">
       <label class="inline"><input type="checkbox" id="pk-noemail" ${d.google ? '' : 'checked'}><span>Don't email them. Just give me the link (for WhatsApp or text).</span></label>
       <label>Policies to include <span class="muted" style="font-weight:400">(<button class="linkbtn" id="pk-all">all</button> / <button class="linkbtn" id="pk-none">none</button>)</span></label>
@@ -228,7 +229,7 @@ async function packs(flash) {
     const btn = $('#pk-send'); btn.disabled = true;
     try {
       const signer = $('#pk-signer').value.trim();
-      const r = await api('/api/packs', { company: $('#pk-company').value, signer, role: $('#pk-role').value, email: $('#pk-email').value, noEmail: $('#pk-noemail').checked, keys: [...document.querySelectorAll('.pk-tick:checked')].map(c => c.value) });
+      const r = await api('/api/packs', { company: $('#pk-company').value, signer, role: $('#pk-role').value, about: $('#pk-about').value, email: $('#pk-email').value, noEmail: $('#pk-noemail').checked, keys: [...document.querySelectorAll('.pk-tick:checked')].map(c => c.value) });
       window.__pack = r;
       packs(`<div class="note ${r.emailed ? 'ok' : 'warnn'}" style="margin-bottom:1rem">${r.emailed ? `Sent to ${esc($('#pk-email').value.trim())}.` : `Link created for ${esc(signer)}. ${esc(r.emailError || 'Send it to them yourself.')}`}
         <div class="linkout" style="margin:.5rem 0;word-break:break-all">${esc(r.link)}</div>

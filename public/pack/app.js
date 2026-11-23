@@ -11,9 +11,9 @@
   function esc(s) {
     return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   }
-  // The wording carries {{company}}, {{signer}} and {{role}} where the client's own details belong.
+  // The wording carries {{company}}, {{about}}, {{signer}} and {{role}} where the client's own details belong.
   function fill(t, v) {
-    return String(t).replace(/\{\{company\}\}/g, v.company).replace(/\{\{signer\}\}/g, v.signer).replace(/\{\{role\}\}/g, v.role);
+    return String(t).replace(/\{\{about\}\}/g, v.about || 'a contractor in the construction industry').replace(/\{\{company\}\}/g, v.company).replace(/\{\{signer\}\}/g, v.signer).replace(/\{\{role\}\}/g, v.role);
   }
 
   /* ---------- on-screen version ---------- */
@@ -41,7 +41,7 @@
     var W = 210, H = 297, ML = 20, MR = 20, MT = 22, MB = 22, CW = W - ML - MR;
     var y = MT;
     var policies = pack.policies;
-    var v = { company: pack.company, signer: sign.name, role: sign.role };
+    var v = { company: pack.company, signer: sign.name, role: sign.role, about: pack.about };
     var dateStr = longDate(sign.date);
     var review = new Date(sign.date.getTime()); review.setFullYear(review.getFullYear() + 1);
     var versionStr = String(pack.version).indexOf('.') === -1 ? pack.version + '.0' : String(pack.version);
