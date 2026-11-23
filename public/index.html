@@ -79,7 +79,16 @@ label { display: block; font-size: .85rem; font-weight: 600; margin: .9rem 0 .3r
 .section tr:last-child td { border-bottom: 0; }
 .section .empty { padding: 1rem 1.1rem; color: var(--faint); font-size: .9rem; }
 .tag { display: inline-block; font-size: .72rem; font-weight: 700; padding: .1rem .45rem; border-radius: 6px; background: #eef1f6; color: var(--accent); }
-@media (max-width: 640px) { .top { padding: 0 1rem; } .wrap { padding: 1rem 1rem 3rem; } }
+.packform { padding: 1rem 1.1rem 1.2rem; }
+.packform .two { display: grid; grid-template-columns: 1fr 1fr; gap: 0 1rem; }
+.packform .ticks { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: .2rem 1rem; margin-top: .3rem; }
+.packform .ticks label, .packform .inline { display: flex; gap: .5rem; align-items: flex-start; font-weight: 400; margin: 0; font-size: .88rem; }
+.packform input[type=checkbox] { width: auto; margin-top: .25rem; }
+.packform .inline { margin-top: .8rem; }
+.linkout { font-family: var(--mono); font-size: 12px; }
+.note.ok { background: var(--ok-bg); color: var(--ok); } .note.warnn { background: var(--warn-bg); color: var(--warn); }
+.linkbtn { background: none; border: 0; color: var(--accent); font: inherit; font-size: .85rem; cursor: pointer; padding: 0; text-decoration: underline; }
+@media (max-width: 640px) { .packform .two { grid-template-columns: 1fr; } .top { padding: 0 1rem; } .wrap { padding: 1rem 1rem 3rem; } }
 </style>
 </head>
 <body>
@@ -105,11 +114,11 @@ function login(msg) {
 
 function frame(title, sub, extra) {
   const view = location.hash.replace(/^#\/?/, '') || '';
-  $('#root').innerHTML = `<header class="top">${wordmark}<nav class="topnav"><a href="#/" class="${view === '' ? 'on' : ''}">Clients</a><a href="#/policies" class="${view === 'policies' ? 'on' : ''}">Policies</a></nav><div class="who"><span>${esc(me.name)}</span><button id="lo">Sign out</button></div></header>
+  $('#root').innerHTML = `<header class="top">${wordmark}<nav class="topnav"><a href="#/" class="${view === '' ? 'on' : ''}">Clients</a><a href="#/policies" class="${view === 'policies' ? 'on' : ''}">Policies</a><a href="#/packs" class="${view === 'packs' ? 'on' : ''}">Policy packs</a></nav><div class="who"><span>${esc(me.name)}</span><button id="lo">Sign out</button></div></header>
     <main class="wrap"><div class="bar"><div><h1>${esc(title)}</h1><p class="muted small" id="asof">${sub || ''}</p></div><div id="bar-extra">${extra || ''}</div></div><div id="content"></div></main>`;
   $('#lo').onclick = async () => { await api('/api/logout', {}); me = null; login(); };
 }
-function route() { if (!me) return login(); const view = location.hash.replace(/^#\/?/, ''); if (view === 'policies') return policies(); return shell(); }
+function route() { if (!me) return login(); const view = location.hash.replace(/^#\/?/, ''); if (view === 'policies') return policies(); if (view === 'packs') return packs(); return shell(); }
 window.addEventListener('hashchange', () => { if (me) route(); });
 
 async function shell(fresh) {
@@ -185,6 +194,50 @@ async function policies() {
     const resign = confirm('Does this change need every client\'s director to re-sign their policies?\n\nOK = yes, re-sign needed. Cancel = no, just update the wording.');
     try { await api('/api/libraries/policies', { body: collect() }); const r = await api('/api/libraries/policies/publish', { note, resign }); alert(`Published version ${r.version}.`); policies(); } catch (e) { alert(e.message); }
   };
+}
+
+// ---- policy packs: send a client their own signing link, see who has signed ----
+async function packs(flash) {
+  frame('Policy packs', 'For clients who are not on a portal. They get their own link, sign once, and the signed pack comes back here.');
+  let d; try { d = await api('/api/packs'); } catch (e) { $('#content').innerHTML = `<div class="note err">${esc(e.message)}</div>`; return; }
+  const waiting = d.packs.filter(p => p.status !== 'signed').length;
+  $('#asof').textContent = `Supplemental business policies, version ${d.version}. ${d.packs.length ? `${d.packs.length - waiting} signed, ${waiting} waiting.` : ''} ${d.google ? '' : 'Email and Google Drive are not connected yet: links are sent by hand and signed packs are kept here.'}`;
+  const row = p => `<tr><td><b>${esc(p.company)}</b><div class="small muted">Ref ${esc(p.ref)} · ${p.policy_keys.length} policies</div></td>
+    <td>${esc(p.signer)}<div class="small muted">${esc(p.email || 'no email')}</div></td>
+    <td>${fmtDate(p.sent_at)}<div class="small muted">${esc(p.sent_by || '')}${p.emailed ? ' · emailed' : ' · link only'}</div></td>
+    <td>${p.status === 'signed' ? `<span class="pill ok">Signed ${fmtDate(p.signed_at)}</span><div class="small muted">${esc(p.signed_name || '')}${p.signed_role ? ', ' + esc(p.signed_role) : ''}</div>` : `<span class="pill warn">Waiting, sent ${ago(p.sent_at)}</span>`}</td>
+    <td>${p.status === 'signed' ? `<a href="/api/packs/${p.id}/pdf" target="_blank" rel="noopener">Signed PDF</a>${p.drive_url ? ` · <a href="${esc(p.drive_url)}" target="_blank" rel="noopener">In Drive</a>` : (d.google ? ` · <button class="linkbtn" data-refile="${p.id}">File in Drive</button>` : '')}`
+      : `<button class="linkbtn" data-copy="${esc(p.link)}">Copy link</button> · <button class="linkbtn" data-del="${p.id}">Remove</button>`}</td></tr>`;
+  $('#content').innerHTML = `${flash || ''}
+    <div class="section"><h2>Send a pack</h2><div class="packform">
+      <label for="pk-company" style="margin-top:0">Company name, exactly as it should appear on the policies</label><input id="pk-company" placeholder="e.g. RH Carpentry &amp; Joinery Ltd">
+      <div class="two"><div><label for="pk-signer">Who is signing</label><input id="pk-signer" placeholder="e.g. Roy Hall"></div><div><label for="pk-role">Their position</label><input id="pk-role" value="Director"></div></div>
+      <label for="pk-email">Their email</label><input id="pk-email" type="email" placeholder="name@company.co.uk">
+      <label class="inline"><input type="checkbox" id="pk-noemail" ${d.google ? '' : 'checked'}><span>Don't email them. Just give me the link (for WhatsApp or text).</span></label>
+      <label>Policies to include <span class="muted" style="font-weight:400">(<button class="linkbtn" id="pk-all">all</button> / <button class="linkbtn" id="pk-none">none</button>)</span></label>
+      <div class="ticks">${d.policies.map(p => `<label><input type="checkbox" class="pk-tick" value="${esc(p.id)}" checked><span>${esc(p.title)}</span></label>`).join('')}</div>
+      <div id="pk-msg" style="margin-top:.9rem"></div>
+      <p style="margin:1rem 0 0"><button class="btn" id="pk-send">${d.google ? 'Send' : 'Create link'}</button></p>
+    </div></div>
+    <div class="section"><h2>Sent packs</h2>${d.packs.length ? `<table><thead><tr><th>Client</th><th>Signer</th><th>Sent</th><th>Status</th><th></th></tr></thead><tbody>${d.packs.map(row).join('')}</tbody></table>` : '<div class="empty">Nothing sent yet.</div>'}</div>`;
+  const ticks = on => document.querySelectorAll('.pk-tick').forEach(c => { c.checked = on; });
+  $('#pk-all').onclick = () => ticks(true); $('#pk-none').onclick = () => ticks(false);
+  $('#pk-noemail').onchange = e => { $('#pk-send').textContent = e.target.checked ? 'Create link' : 'Send'; };
+  const copy = async t => { try { await navigator.clipboard.writeText(t); } catch (e) { prompt('Copy this:', t); } };
+  $('#pk-send').onclick = async () => {
+    const btn = $('#pk-send'); btn.disabled = true;
+    try {
+      const signer = $('#pk-signer').value.trim();
+      const r = await api('/api/packs', { company: $('#pk-company').value, signer, role: $('#pk-role').value, email: $('#pk-email').value, noEmail: $('#pk-noemail').checked, keys: [...document.querySelectorAll('.pk-tick:checked')].map(c => c.value) });
+      window.__pack = r;
+      packs(`<div class="note ${r.emailed ? 'ok' : 'warnn'}" style="margin-bottom:1rem">${r.emailed ? `Sent to ${esc($('#pk-email').value.trim())}.` : `Link created for ${esc(signer)}. ${esc(r.emailError || 'Send it to them yourself.')}`}
+        <div class="linkout" style="margin:.5rem 0;word-break:break-all">${esc(r.link)}</div>
+        <button class="btn ghost" onclick="navigator.clipboard.writeText(window.__pack.link)">Copy link</button> <button class="btn ghost" onclick="navigator.clipboard.writeText(window.__pack.emailText)">Copy email to send</button></div>`);
+    } catch (e) { btn.disabled = false; $('#pk-msg').innerHTML = `<div class="note err">${esc(e.message)}</div>`; }
+  };
+  document.querySelectorAll('[data-copy]').forEach(b => { b.onclick = async () => { await copy(b.dataset.copy); b.textContent = 'Copied'; }; });
+  document.querySelectorAll('[data-del]').forEach(b => { b.onclick = async () => { if (!confirm('Remove this pack? The client\'s link will stop working.')) return; try { await api(`/api/packs/${b.dataset.del}/delete`, {}); packs(); } catch (e) { alert(e.message); } }; });
+  document.querySelectorAll('[data-refile]').forEach(b => { b.onclick = async () => { b.textContent = 'Filing...'; try { await api(`/api/packs/${b.dataset.refile}/refile`, {}); packs(); } catch (e) { alert(e.message); packs(); } }; });
 }
 
 api('/api/me').then(d => { me = d.user; me ? route() : login(); }).catch(() => login());

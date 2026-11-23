@@ -17,7 +17,8 @@ const USERS = Object.fromEntries((process.env.TRESOR_USERS || 'dec@safety-simpli
 const app = express();
 app.set('trust proxy', 1);
 app.disable('x-powered-by');
-app.use(express.json());
+const json = express.json();
+app.use((req, res, next) => (req.path.startsWith('/api/sign/') ? next() : json(req, res, next))); // signed PDFs are large and have their own limit
 
 // ---- sessions: a signed cookie, nothing stored ----
 const sign = v => v + '.' + crypto.createHmac('sha256', SECRET).update(v).digest('base64url');
@@ -85,6 +86,9 @@ app.post('/api/libraries/:name/publish', needUser, wrap(async (req, res) => {
   cache = { at: 0, data: null };
   res.json({ version });
 }));
+
+// ---- policy packs: signing links for clients who are not on a portal ----
+require('./lib/packs')(app, { db, user, needUser, wrap });
 
 app.use(express.static(path.join(__dirname, 'public'), { index: 'index.html', maxAge: 0 }));
 app.get('/healthz', (req, res) => res.json({ ok: true }));

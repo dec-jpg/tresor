@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Sign your company policies</title>
+<link rel="stylesheet" href="/pack/sign.css">
+</head>
+<body>
+<header class="top"><div class="in">
+  <h1 id="h1">Company policies</h1>
+  <p id="sub">Loading your policies...</p>
+</div></header>
+<main>
+  <div id="bad" class="card hide">
+    <h2>This link isn't working</h2>
+    <p>Please open the full link from your email or message. If it still doesn't work, ask Hannah at Safety Simplified for a new one: <a href="mailto:hannah@safety-simplified.com">hannah@safety-simplified.com</a>.</p>
+  </div>
+
+  <div id="already" class="card done hide">
+    <h2>Already signed. Thank you.</h2>
+    <p id="alreadytext"></p>
+  </div>
+
+  <div id="app" class="hide">
+    <div class="card">
+      <h2>What to do</h2>
+      <ol class="steps">
+        <li>Read the policies below.</li>
+        <li>Draw your signature at the bottom and press <strong>Sign policies</strong>.</li>
+        <li>That's it. Your signed copy is sent to us automatically, and you can download one for yourself.</li>
+      </ol>
+    </div>
+    <div class="card">
+      <h2>Policies in this pack</h2>
+      <ol class="toc" id="toc"></ol>
+    </div>
+    <div id="policies"></div>
+
+    <div class="card" id="signcard">
+      <h2>Sign the policies</h2>
+      <p class="small">Your one signature is placed on every policy in this pack, with your name, position and today's date.</p>
+      <div class="row">
+        <div><label for="name">Your full name</label><input type="text" id="name" autocomplete="name"></div>
+        <div><label for="role">Your position</label><input type="text" id="role" autocomplete="organization-title"></div>
+      </div>
+      <label for="pad">Draw your signature</label>
+      <canvas id="pad" class="pad" tabindex="0" aria-label="Signature area. Draw with your finger or mouse."></canvas>
+      <div class="padbar"><span>Use your finger, or a mouse on a computer.</span><button type="button" id="clear">Clear</button></div>
+      <label class="check"><input type="checkbox" id="agree"><span>I confirm I have read these policies and I am signing them on behalf of <strong id="agreeco"></strong>.</span></label>
+      <div id="formmsg" class="msg bad hide" role="alert"></div>
+      <button type="button" class="primary" id="sign">Sign policies</button>
+    </div>
+  </div>
+
+  <div id="done" class="card done hide">
+    <h2 id="donetitle">Sending your signed copy...</h2>
+    <p id="donetext">Please keep this page open for a moment.</p>
+    <p><button type="button" id="download">Download your copy (PDF)</button></p>
+    <div id="donemsg" class="msg warn hide" role="alert"></div>
+    <p><button type="button" class="link hide" id="retry">Try sending again</button></p>
+  </div>
+</main>
+<footer class="foot">Prepared by Safety Simplified Ltd.</footer>
+
+<script src="/pack/jspdf.umd.min.js"></script>
+<script src="/pack/app.js"></script>
+<script>
+(function () {
+  var A = window.PolicyPack;
+  function $(id) { return document.getElementById(id); }
+  function show(id, on) { $(id).classList.toggle('hide', !on); }
+  var token = location.pathname.split('/').filter(Boolean).pop();
+  var api = '/api/sign/' + encodeURIComponent(token);
+  var pack = null;
+
+  fetch(api).then(function (r) { return r.json().then(function (j) { if (!r.ok) throw new Error(j.error || 'bad'); return j; }); })
+    .then(function (p) {
+      if (p.signed) {
+        $('h1').textContent = 'Policies for ' + p.company; $('sub').textContent = 'Signed';
+        $('alreadytext').textContent = 'The policies for ' + p.company + ' were signed on ' + A.fmtDate(new Date(p.signed_at)) + '. There is nothing else you need to do.';
+        return show('already', true);
+      }
+      pack = p; start();
+    })
+    .catch(function () { $('sub').textContent = ''; show('bad', true); });
+
+  function start() {
+    document.title = 'Policies for ' + pack.company;
+    $('h1').textContent = 'Policies for ' + pack.company;
+    $('sub').textContent = pack.policies.length + ' policies to read. Sign once at the bottom.';
+    $('agreeco').textContent = pack.company;
+    $('name').value = pack.signer || '';
+    $('role').value = pack.role || 'Director';
+    $('toc').innerHTML = pack.policies.map(function (p) { return '<li><a href="#p-' + p.id + '">' + A.esc(p.title) + '</a></li>'; }).join('');
+    $('policies').innerHTML = pack.policies.map(function (p) { return A.policyHTML(p, pack.company); }).join('');
+    show('app', true);
+    setupPad();
+  }
+
+  /* signature pad */
+  var pad, ctx, drawing = false, hasInk = false, last = null;
+  function setupPad() {
+    pad = $('pad'); ctx = pad.getContext('2d');
+    function sizePad() {
+      var r = pad.getBoundingClientRect(), d = window.devicePixelRatio || 1, old = hasInk ? pad.toDataURL() : null;
+      pad.width = Math.round(r.width * d); pad.height = Math.round(r.height * d);
+      ctx.setTransform(d, 0, 0, d, 0, 0); ctx.lineWidth = 2.4; ctx.lineCap = 'round'; ctx.lineJoin = 'round'; ctx.strokeStyle = '#111a2e';
+      if (old) { var im = new Image(); im.onload = function () { ctx.drawImage(im, 0, 0, r.width, r.height); }; im.src = old; }
+    }
+    sizePad(); window.addEventListener('resize', sizePad);
+    function pos(e) { var r = pad.getBoundingClientRect(); return { x: e.clientX - r.left, y: e.clientY - r.top }; }
+    pad.addEventListener('pointerdown', function (e) { e.preventDefault(); pad.setPointerCapture(e.pointerId); drawing = true; last = pos(e); ctx.beginPath(); ctx.arc(last.x, last.y, 1.1, 0, 6.3); ctx.fillStyle = '#111a2e'; ctx.fill(); hasInk = true; });
+    pad.addEventListener('pointermove', function (e) { if (!drawing) return; var p = pos(e); ctx.beginPath(); ctx.moveTo(last.x, last.y); ctx.lineTo(p.x, p.y); ctx.stroke(); last = p; });
+    ['pointerup', 'pointercancel', 'pointerleave'].forEach(function (n) { pad.addEventListener(n, function () { drawing = false; }); });
+    $('clear').addEventListener('click', function () { var r = pad.getBoundingClientRect(); ctx.clearRect(0, 0, r.width, r.height); hasInk = false; });
+  }
+  function signatureImage() {
+    var c = document.createElement('canvas'); c.width = 780; c.height = 270;
+    var x = c.getContext('2d'); x.fillStyle = '#fff'; x.fillRect(0, 0, c.width, c.height); x.drawImage(pad, 0, 0, c.width, c.height);
+    return c.toDataURL('image/png');
+  }
+  function fail(msg) { var m = $('formmsg'); m.textContent = msg; m.classList.remove('hide'); }
+
+  var signed = null;
+  $('sign').addEventListener('click', function () {
+    $('formmsg').classList.add('hide');
+    var name = $('name').value.trim(), role = $('role').value.trim();
+    if (!name) return fail('Please enter your full name.');
+    if (!role) return fail('Please enter your position, for example Director.');
+    if (!hasInk) return fail('Please draw your signature in the box.');
+    if (!$('agree').checked) return fail('Please tick the box to confirm you have read the policies.');
+    var btn = $('sign'); btn.disabled = true; btn.textContent = 'Signing...';
+    setTimeout(function () {
+      try {
+        var now = new Date();
+        var doc = A.buildPDF(window.jspdf.jsPDF, pack, { name: name, role: role, date: now, image: signatureImage() });
+        var filename = (pack.company + ' - ' + pack.packName + ' - signed ' + A.fmtDate(now)).replace(/[\\/:*?"<>|]+/g, ' ') + '.pdf';
+        signed = { doc: doc, filename: filename, body: JSON.stringify({ name: name, role: role, pdf: doc.output('datauristring').split(',')[1] }) };
+        show('app', false); show('done', true); window.scrollTo(0, 0);
+        deliver();
+      } catch (err) {
+        btn.disabled = false; btn.textContent = 'Sign policies';
+        fail('Something went wrong creating your signed copy. Please try again, or contact hannah@safety-simplified.com.');
+      }
+    }, 30);
+  });
+
+  function deliver() {
+    var m = $('donemsg');
+    show('retry', false); m.classList.add('hide');
+    $('donetitle').textContent = 'Sending your signed copy...';
+    $('donetext').textContent = 'Please keep this page open for a moment.';
+    fetch(api, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: signed.body })
+      .then(function (r) { return r.json().then(function (j) { return { status: r.status, j: j }; }); })
+      .then(function (res) {
+        if (!(res.j && res.j.ok) && res.status !== 409) throw new Error('not saved');
+        $('donetitle').textContent = 'Signed. Thank you.';
+        $('donetext').textContent = 'Your signed policies have been sent to Safety Simplified. There is nothing else you need to do.';
+      })
+      .catch(function () {
+        $('donetitle').textContent = 'Signed, but not sent yet';
+        $('donetext').textContent = '';
+        m.textContent = 'We could not send your signed copy automatically. Check your connection and try again, or download it and email it to hannah@safety-simplified.com.';
+        m.classList.remove('hide'); show('retry', true);
+      });
+  }
+  $('retry').addEventListener('click', deliver);
+  $('download').addEventListener('click', function () { if (signed) signed.doc.save(signed.filename); });
+})();
+</script>
+</body>
+</html>
