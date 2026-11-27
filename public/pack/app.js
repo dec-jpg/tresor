@@ -129,7 +129,8 @@
     font(false, 10); doc.text('Signed by ' + sign.name + ' · ' + dateStr, ML, cy + 38);
     y = cy + 50;
     font(true, 11); doc.text('Contents', ML, y); y += 7;
-    policies.forEach(function (p, i) { ensure(5.5); font(false, 10); doc.text((i + 1) + '.  ' + p.title, ML + 2, y); y += 5.5; });
+    var clh = Math.min(5.5, (H - MB - y - 0.1) / policies.length); // a longer contents list closes up to stay on the cover
+    policies.forEach(function (p, i) { ensure(clh); font(false, 10); doc.text((i + 1) + '.  ' + p.title, ML + 2, y); y += clh; });
 
     // Policies
     policies.forEach(function (p, n) {
