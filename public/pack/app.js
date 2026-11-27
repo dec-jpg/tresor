@@ -127,7 +127,7 @@
       label(r[0], cx, yy); font(true, 11); doc.text(doc.splitTextToSize(String(r[1]), 80), cx, yy + 5.5);
     });
     font(false, 10); doc.text('Signed by ' + sign.name + ' · ' + dateStr, ML, cy + 38);
-    y = cy + 54;
+    y = cy + 50;
     font(true, 11); doc.text('Contents', ML, y); y += 7;
     policies.forEach(function (p, i) { ensure(5.5); font(false, 10); doc.text((i + 1) + '.  ' + p.title, ML + 2, y); y += 5.5; });
 
